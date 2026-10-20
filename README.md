@@ -11,8 +11,9 @@ o sol aparece onde estaria naquele momento e, quando escurece, as luzes da casa 
   primeira vez. Em celular e tablet aparecem controles na tela.
 - **Linux:** [baixar](https://github.com/eduardodoria/virtualhome_aloisio/archive/refs/heads/linux.zip), extrair e rodar `Casa_Aloisio`.
 - **Windows:** [baixar](https://github.com/eduardodoria/virtualhome_aloisio/archive/refs/heads/windows.zip), extrair e rodar `Casa_Aloisio.exe`.
-- **macOS:** [baixar](https://github.com/eduardodoria/virtualhome_aloisio/archive/refs/heads/macos.zip) e extrair. O aplicativo não é assinado: na primeira vez, abra
-  com o botão direito → Abrir.
+- **macOS:** [baixar](https://github.com/eduardodoria/virtualhome_aloisio/archive/refs/heads/macos.zip),
+  extrair e rodar `Casa_Aloisio`. O executável não é assinado: se o macOS bloquear, libere em
+  Ajustes do Sistema → Privacidade e Segurança → Abrir Mesmo Assim.
 
 ## Controles
 
@@ -31,6 +32,21 @@ o sol aparece onde estaria naquele momento e, quando escurece, as luzes da casa 
 | M | Liga e desliga o som |
 | H | Abre e fecha o painel de data e hora |
 | F3 | Abre e fecha o painel de desempenho |
+
+Com um controle (gamepad) conectado:
+
+| Controle (Xbox / PlayStation) | O que faz |
+| --- | --- |
+| Analógico esquerdo | Andar (mais rápido quanto mais inclinado) |
+| Analógico direito | Olhar em volta |
+| RT / R2, ou apertar o analógico esquerdo | Correr |
+| Y / △ | Liga e desliga o voo (A / ✕ sobe, B / ○ desce) |
+| LB / L1 e RB / R1 | Ponto de vista anterior e próximo |
+| Direcional ← → | Volta ou avança uma hora |
+| Direcional ↑ ↓ | Avança ou volta um dia |
+| X / □ | Luzes da casa |
+| Start / Options | Abre e fecha o painel de data e hora |
+| Back / Share | Liga e desliga o som |
 
 Em celular e tablet aparecem controles na tela:
 
