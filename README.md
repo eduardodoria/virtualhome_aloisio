@@ -9,9 +9,9 @@ o sol aparece onde estaria naquele momento e, quando escurece, as luzes da casa 
 
 - **No navegador:** <https://eduardodoria.github.io/virtualhome_aloisio/>. Baixa cerca de 175 MB na
   primeira vez. Em celular e tablet aparecem controles na tela.
-- **Linux:** [baixar](https://github.com/eduardodoria/virtualhome_aloisio/archive/refs/heads/linux.zip), extrair e rodar `Casa_Aloisio`.
-- **Windows:** [baixar](https://github.com/eduardodoria/virtualhome_aloisio/archive/refs/heads/windows.zip), extrair e rodar `Casa_Aloisio.exe`.
-- **macOS:** [baixar](https://github.com/eduardodoria/virtualhome_aloisio/archive/refs/heads/macos.zip),
+- **Linux:** [baixar](https://github.com/eduardodoria/virtualhome_aloisio/releases/download/builds/Casa_Aloisio-linux.zip), extrair e rodar `Casa_Aloisio`.
+- **Windows:** [baixar](https://github.com/eduardodoria/virtualhome_aloisio/releases/download/builds/Casa_Aloisio-windows.zip), extrair e rodar `Casa_Aloisio.exe`.
+- **macOS:** [baixar](https://github.com/eduardodoria/virtualhome_aloisio/releases/download/builds/Casa_Aloisio-macos.zip),
   extrair e rodar `Casa_Aloisio`. O executável não é assinado: se o macOS bloquear, libere em
   Ajustes do Sistema → Privacidade e Segurança → Abrir Mesmo Assim.
 
@@ -71,13 +71,16 @@ ligados e são o que mais pesa.
 
 Guarda o código exportado pela Doriax a partir do projeto (que fica num repositório privado) e compila
 as versões no próprio CI. Os modelos, texturas e sons vão empacotados em `resources.pak`, em partes de
-50 MB que o CI junta antes de compilar. Cada branch tem um único commit, trocado a cada publicação:
+50 MB que o CI junta antes de compilar. Cada publicação é um commit na `main`; a branch do site tem
+um único commit, trocado a cada build:
 
 | Branch | Conteúdo |
 | --- | --- |
 | `main` | Este README, o código exportado (`export/`), a página web (`web/`) e o CI (`.github/`) |
 | `gh-pages` | Versão web (GitHub Pages) |
-| `linux`, `windows`, `macos` | Versões desktop |
+
+As versões desktop ficam na release [`builds`](https://github.com/eduardodoria/virtualhome_aloisio/releases/tag/builds),
+trocadas a cada build.
 
 ## Créditos
 

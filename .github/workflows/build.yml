@@ -1,8 +1,9 @@
 # Builds the Doriax source export in export/ (published here by casa_aloisio, source/tools/publish_source.sh)
-# for Linux, Windows, macOS and the web, and publishes each build as a single-commit branch: linux, windows,
-# macos (downloaded as the branch ZIP) and gh-pages (GitHub Pages, "Deploy from a branch", gh-pages, root).
-# Each job pushes its own branch, so a platform that fails keeps its previous build and no artifact storage
-# is used. The asset pack goes in 50 MB parts (git on GitHub refuses files over 100 MB); the jobs join it.
+# for Linux, Windows, macOS and the web. The desktop versions go as zips to the "builds" release
+# (Casa_Aloisio-linux.zip, -windows.zip, -macos.zip); the site goes to the single-commit gh-pages branch
+# (GitHub Pages, "Deploy from a branch", gh-pages, root). Each job publishes its own build, so a platform
+# that fails keeps its previous one, and no artifact storage is used. The asset pack is kept in 50 MB parts
+# (git on GitHub refuses files over 100 MB); the jobs join it before building.
 name: Build
 
 on:
@@ -74,11 +75,12 @@ jobs:
       - name: Install
         run: cmake --install "$BUILD_DIR" --config Release --prefix "$PACKAGE_DIR"
 
+      # A release asset: the asset pack is over the 100 MB git on GitHub takes in a file, so not a branch
       - name: Publish
         if: github.ref == 'refs/heads/main'
         env:
-          TOKEN: ${{ github.token }}
-        run: bash .github/scripts/publish_branch.sh "$PACKAGE_DIR/bin" "${{ matrix.platform }}"
+          GH_TOKEN: ${{ github.token }}
+        run: bash .github/scripts/publish_release.sh "$PACKAGE_DIR/bin" "$APP_NAME-${{ matrix.platform }}.zip"
 
   web:
     runs-on: ubuntu-latest
