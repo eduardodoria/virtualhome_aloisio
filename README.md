@@ -64,16 +64,18 @@ automático as luzes acendem quando o sol se põe.
 
 Ao lado do relógio, o botão com um medidor abre o painel de desempenho: mostra os quadros por
 segundo e deixa reduzir a resolução, as sombras e a distância da vegetação, para máquinas mais
-fracas. Também liga a oclusão de ambiente (SSAO) e os reflexos em tela (SSR), que começam
-desligados porque pesam bastante.
+fracas. Também desliga a oclusão de ambiente (SSAO) e os reflexos em tela (SSR), que começam
+ligados e são o que mais pesa.
 
 ## Este repositório
 
-Só recebe os builds, publicados pelo CI do projeto (que fica num repositório privado). Cada branch
-tem um único commit, trocado a cada build:
+Guarda o código exportado pela Doriax a partir do projeto (que fica num repositório privado) e compila
+as versões no próprio CI. Os modelos, texturas e sons vão empacotados em `resources.pak`, em partes de
+50 MB que o CI junta antes de compilar. Cada branch tem um único commit, trocado a cada publicação:
 
 | Branch | Conteúdo |
 | --- | --- |
+| `main` | Este README, o código exportado (`export/`), a página web (`web/`) e o CI (`.github/`) |
 | `gh-pages` | Versão web (GitHub Pages) |
 | `linux`, `windows`, `macos` | Versões desktop |
 

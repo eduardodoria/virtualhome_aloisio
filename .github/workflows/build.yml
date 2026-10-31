@@ -1,0 +1,130 @@
+# Builds the Doriax source export in export/ (published here by casa_aloisio, source/tools/publish_source.sh)
+# for Linux, Windows, macOS and the web, and publishes each build as a single-commit branch: linux, windows,
+# macos (downloaded as the branch ZIP) and gh-pages (GitHub Pages, "Deploy from a branch", gh-pages, root).
+# Each job pushes its own branch, so a platform that fails keeps its previous build and no artifact storage
+# is used. The asset pack goes in 50 MB parts (git on GitHub refuses files over 100 MB); the jobs join it.
+name: Build
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  EXPORT_DIR: export
+  BUILD_DIR: .ci-build/build
+  PACKAGE_DIR: .ci-build/package
+  SITE_DIR: .ci-build/site
+
+jobs:
+  desktop:
+    name: ${{ matrix.platform }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 90
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            platform: linux
+          - os: windows-latest
+            platform: windows
+          - os: macos-latest
+            platform: macos
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Join the asset pack
+        run: bash .github/scripts/join_pack.sh "$EXPORT_DIR"
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+
+      - name: Install Linux dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libasound2-dev libgl1-mesa-dev libglfw3-dev libxi-dev libxcursor-dev
+
+      # The export carries the shaders of every backend; CMake picks glcore on Linux and Windows, metal on macOS
+      - name: Configure
+        run: |
+          cmake -S "$EXPORT_DIR" -B "$BUILD_DIR" -DCMAKE_BUILD_TYPE=Release
+          echo "APP_NAME=$(sed -n 's/^ *set(APP_NAME \([^)]*\)).*/\1/p' "$EXPORT_DIR/CMakeLists.txt" | head -n 1)" >> "$GITHUB_ENV"
+
+      - name: Build
+        run: cmake --build "$BUILD_DIR" --config Release
+
+      - name: Install
+        run: cmake --install "$BUILD_DIR" --config Release --prefix "$PACKAGE_DIR"
+
+      - name: Publish
+        if: github.ref == 'refs/heads/main'
+        env:
+          TOKEN: ${{ github.token }}
+        run: bash .github/scripts/publish_branch.sh "$PACKAGE_DIR/bin" "${{ matrix.platform }}"
+
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Join the asset pack
+        run: bash .github/scripts/join_pack.sh "$EXPORT_DIR"
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+
+      - name: Setup emsdk
+        uses: emscripten-core/setup-emsdk@v16
+        with:
+          version: 5.0.6
+
+      - name: Install Linux dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake ninja-build
+
+      # web/shell.html: the canvas on the whole window and a loading screen with the download progress
+      - name: Configure
+        run: |
+          emcmake cmake -S "$EXPORT_DIR" -B "$BUILD_DIR" -G Ninja -DCMAKE_BUILD_TYPE=Release \
+            -DEM_ADDITIONAL_LINK_FLAGS="--shell-file $GITHUB_WORKSPACE/web/shell.html"
+          echo "APP_NAME=$(sed -n 's/^ *set(APP_NAME \([^)]*\)).*/\1/p' "$EXPORT_DIR/CMakeLists.txt" | head -n 1)" >> "$GITHUB_ENV"
+
+      - name: Build
+        run: cmake --build "$BUILD_DIR" --config Release
+
+      # index.html, the engine and the data package in parts under 100 MB
+      - name: Prepare site
+        run: bash web/prepare_site.sh "$BUILD_DIR" "$APP_NAME" "$SITE_DIR"
+
+      - name: Publish
+        if: github.ref == 'refs/heads/main'
+        env:
+          TOKEN: ${{ github.token }}
+        run: bash .github/scripts/publish_branch.sh "$SITE_DIR" gh-pages
