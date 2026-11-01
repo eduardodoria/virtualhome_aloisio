@@ -12,92 +12,92 @@ void create_scene_Casa_126876070(Scene* scene){
     scene->recreateEntity(1002);
     scene->recreateEntity(1003);
     scene->recreateEntity(1004);
-    scene->recreateEntity(38844);
-    scene->recreateEntity(38845);
-    scene->recreateEntity(38846);
-    scene->recreateEntity(38847);
-    scene->recreateEntity(38848);
-    scene->recreateEntity(38849);
-    scene->recreateEntity(38850);
-    scene->recreateEntity(38851);
-    scene->recreateEntity(38852);
-    scene->recreateEntity(38853);
-    scene->recreateEntity(38854);
-    scene->recreateEntity(38855);
-    scene->recreateEntity(38856);
-    scene->recreateEntity(38857);
-    scene->recreateEntity(38858);
-    scene->recreateEntity(38859);
-    scene->recreateEntity(38860);
-    scene->recreateEntity(38861);
-    scene->recreateEntity(38862);
-    scene->recreateEntity(38863);
-    scene->recreateEntity(38864);
-    scene->recreateEntity(38865);
-    scene->recreateEntity(38866);
-    scene->recreateEntity(38867);
-    scene->recreateEntity(38868);
-    scene->recreateEntity(38869);
-    scene->recreateEntity(38870);
-    scene->recreateEntity(38871);
-    scene->recreateEntity(38872);
-    scene->recreateEntity(38873);
-    scene->recreateEntity(38874);
-    scene->recreateEntity(38875);
-    scene->recreateEntity(38876);
-    scene->recreateEntity(38877);
-    scene->recreateEntity(38878);
-    scene->recreateEntity(38879);
-    scene->recreateEntity(38880);
-    scene->recreateEntity(38881);
-    scene->recreateEntity(38882);
-    scene->recreateEntity(38883);
-    scene->recreateEntity(38884);
-    scene->recreateEntity(38885);
-    scene->recreateEntity(38886);
-    scene->recreateEntity(38887);
-    scene->recreateEntity(38888);
-    scene->recreateEntity(38889);
-    scene->recreateEntity(38890);
-    scene->recreateEntity(38891);
-    scene->recreateEntity(38892);
-    scene->recreateEntity(38893);
-    scene->recreateEntity(38894);
-    scene->recreateEntity(38895);
-    scene->recreateEntity(38896);
-    scene->recreateEntity(38897);
-    scene->recreateEntity(38898);
-    scene->recreateEntity(38899);
-    scene->recreateEntity(38900);
-    scene->recreateEntity(38901);
-    scene->recreateEntity(38902);
-    scene->recreateEntity(38903);
-    scene->recreateEntity(38904);
-    scene->recreateEntity(38905);
-    scene->recreateEntity(38906);
-    scene->recreateEntity(38907);
-    scene->recreateEntity(38908);
-    scene->recreateEntity(38909);
-    scene->recreateEntity(38910);
-    scene->recreateEntity(38911);
-    scene->recreateEntity(38912);
-    scene->recreateEntity(38913);
-    scene->recreateEntity(38914);
-    scene->recreateEntity(38915);
-    scene->recreateEntity(38916);
-    scene->recreateEntity(38917);
-    scene->recreateEntity(38918);
-    scene->recreateEntity(38919);
-    scene->recreateEntity(38920);
-    scene->recreateEntity(38921);
-    scene->recreateEntity(38922);
-    scene->recreateEntity(38923);
-    scene->recreateEntity(38924);
-    scene->recreateEntity(38925);
-    scene->recreateEntity(38926);
-    scene->recreateEntity(38927);
-    scene->recreateEntity(38928);
-    scene->recreateEntity(38929);
+    scene->recreateEntity(38972);
+    scene->recreateEntity(38973);
+    scene->recreateEntity(38974);
+    scene->recreateEntity(38975);
+    scene->recreateEntity(38976);
+    scene->recreateEntity(38977);
+    scene->recreateEntity(38978);
+    scene->recreateEntity(38979);
+    scene->recreateEntity(38980);
+    scene->recreateEntity(38981);
+    scene->recreateEntity(38982);
+    scene->recreateEntity(38983);
+    scene->recreateEntity(38984);
+    scene->recreateEntity(38985);
+    scene->recreateEntity(38986);
+    scene->recreateEntity(38987);
+    scene->recreateEntity(38988);
+    scene->recreateEntity(38989);
+    scene->recreateEntity(38990);
+    scene->recreateEntity(38991);
+    scene->recreateEntity(38992);
+    scene->recreateEntity(38993);
+    scene->recreateEntity(38994);
+    scene->recreateEntity(38995);
+    scene->recreateEntity(38996);
+    scene->recreateEntity(38997);
+    scene->recreateEntity(38998);
+    scene->recreateEntity(38999);
+    scene->recreateEntity(39000);
+    scene->recreateEntity(39001);
+    scene->recreateEntity(39002);
+    scene->recreateEntity(39003);
+    scene->recreateEntity(39004);
+    scene->recreateEntity(39005);
+    scene->recreateEntity(39006);
+    scene->recreateEntity(39007);
+    scene->recreateEntity(39008);
+    scene->recreateEntity(39009);
+    scene->recreateEntity(39010);
+    scene->recreateEntity(39011);
+    scene->recreateEntity(39012);
+    scene->recreateEntity(39013);
+    scene->recreateEntity(39014);
+    scene->recreateEntity(39015);
+    scene->recreateEntity(39016);
+    scene->recreateEntity(39017);
+    scene->recreateEntity(39018);
+    scene->recreateEntity(39019);
+    scene->recreateEntity(39020);
+    scene->recreateEntity(39021);
+    scene->recreateEntity(39022);
+    scene->recreateEntity(39023);
+    scene->recreateEntity(39024);
+    scene->recreateEntity(39025);
+    scene->recreateEntity(39026);
+    scene->recreateEntity(39027);
+    scene->recreateEntity(39028);
+    scene->recreateEntity(39029);
+    scene->recreateEntity(39030);
+    scene->recreateEntity(39031);
+    scene->recreateEntity(39032);
+    scene->recreateEntity(39033);
+    scene->recreateEntity(39034);
+    scene->recreateEntity(39035);
+    scene->recreateEntity(39036);
+    scene->recreateEntity(39037);
+    scene->recreateEntity(39038);
+    scene->recreateEntity(39039);
+    scene->recreateEntity(39040);
+    scene->recreateEntity(39041);
+    scene->recreateEntity(39042);
+    scene->recreateEntity(39043);
+    scene->recreateEntity(39044);
+    scene->recreateEntity(39045);
+    scene->recreateEntity(39046);
+    scene->recreateEntity(39047);
+    scene->recreateEntity(39048);
+    scene->recreateEntity(39049);
+    scene->recreateEntity(39050);
+    scene->recreateEntity(39051);
+    scene->recreateEntity(39052);
+    scene->recreateEntity(39053);
+    scene->recreateEntity(39054);
+    scene->recreateEntity(39055);
+    scene->recreateEntity(39056);
+    scene->recreateEntity(39057);
     scene->recreateEntity(1005);
     scene->recreateEntity(1031);
     scene->recreateEntity(1032);
@@ -123,7 +123,7 @@ void create_scene_Casa_126876070(Scene* scene){
     scene->recreateEntity(37850);
     scene->recreateEntity(37864);
     scene->recreateEntity(37865);
-    scene->setLastEntity(38929);
+    scene->setLastEntity(39057);
 
     {
         // Entity 1001 (Sun)
@@ -906,92 +906,92 @@ void create_scene_Casa_126876070(Scene* scene){
         modelcomp.filename = "models/house.glb";
         modelcomp.mergeStaticMeshes = false;
         modelcomp.skeleton = NULL_ENTITY;
-        modelcomp.meshNodesMapping[0] = 38844;
-        modelcomp.meshNodesMapping[1] = 38845;
-        modelcomp.meshNodesMapping[2] = 38846;
-        modelcomp.meshNodesMapping[3] = 38847;
-        modelcomp.meshNodesMapping[4] = 38848;
-        modelcomp.meshNodesMapping[5] = 38849;
-        modelcomp.meshNodesMapping[6] = 38850;
-        modelcomp.meshNodesMapping[7] = 38851;
-        modelcomp.meshNodesMapping[8] = 38852;
-        modelcomp.meshNodesMapping[9] = 38853;
-        modelcomp.meshNodesMapping[10] = 38854;
-        modelcomp.meshNodesMapping[11] = 38855;
-        modelcomp.meshNodesMapping[12] = 38856;
-        modelcomp.meshNodesMapping[13] = 38857;
-        modelcomp.meshNodesMapping[14] = 38858;
-        modelcomp.meshNodesMapping[15] = 38859;
-        modelcomp.meshNodesMapping[16] = 38860;
-        modelcomp.meshNodesMapping[17] = 38861;
-        modelcomp.meshNodesMapping[18] = 38862;
-        modelcomp.meshNodesMapping[19] = 38863;
-        modelcomp.meshNodesMapping[20] = 38864;
-        modelcomp.meshNodesMapping[21] = 38865;
-        modelcomp.meshNodesMapping[22] = 38866;
-        modelcomp.meshNodesMapping[23] = 38867;
-        modelcomp.meshNodesMapping[24] = 38868;
-        modelcomp.meshNodesMapping[25] = 38869;
-        modelcomp.meshNodesMapping[26] = 38870;
-        modelcomp.meshNodesMapping[27] = 38871;
-        modelcomp.meshNodesMapping[28] = 38872;
-        modelcomp.meshNodesMapping[29] = 38873;
-        modelcomp.meshNodesMapping[30] = 38874;
-        modelcomp.meshNodesMapping[31] = 38875;
-        modelcomp.meshNodesMapping[32] = 38876;
-        modelcomp.meshNodesMapping[33] = 38877;
-        modelcomp.meshNodesMapping[34] = 38878;
-        modelcomp.meshNodesMapping[35] = 38879;
-        modelcomp.meshNodesMapping[36] = 38880;
-        modelcomp.meshNodesMapping[37] = 38881;
-        modelcomp.meshNodesMapping[38] = 38882;
-        modelcomp.meshNodesMapping[39] = 38883;
-        modelcomp.meshNodesMapping[40] = 38884;
-        modelcomp.meshNodesMapping[41] = 38885;
-        modelcomp.meshNodesMapping[42] = 38886;
-        modelcomp.meshNodesMapping[43] = 38887;
-        modelcomp.meshNodesMapping[44] = 38888;
-        modelcomp.meshNodesMapping[45] = 38889;
-        modelcomp.meshNodesMapping[46] = 38890;
-        modelcomp.meshNodesMapping[47] = 38891;
-        modelcomp.meshNodesMapping[48] = 38892;
-        modelcomp.meshNodesMapping[49] = 38893;
-        modelcomp.meshNodesMapping[50] = 38894;
-        modelcomp.meshNodesMapping[51] = 38895;
-        modelcomp.meshNodesMapping[52] = 38896;
-        modelcomp.meshNodesMapping[53] = 38897;
-        modelcomp.meshNodesMapping[54] = 38898;
-        modelcomp.meshNodesMapping[55] = 38899;
-        modelcomp.meshNodesMapping[56] = 38900;
-        modelcomp.meshNodesMapping[57] = 38901;
-        modelcomp.meshNodesMapping[58] = 38902;
-        modelcomp.meshNodesMapping[59] = 38903;
-        modelcomp.meshNodesMapping[60] = 38904;
-        modelcomp.meshNodesMapping[61] = 38905;
-        modelcomp.meshNodesMapping[62] = 38906;
-        modelcomp.meshNodesMapping[63] = 38907;
-        modelcomp.meshNodesMapping[64] = 38908;
-        modelcomp.meshNodesMapping[65] = 38909;
-        modelcomp.meshNodesMapping[66] = 38910;
-        modelcomp.meshNodesMapping[67] = 38911;
-        modelcomp.meshNodesMapping[68] = 38912;
-        modelcomp.meshNodesMapping[69] = 38913;
-        modelcomp.meshNodesMapping[70] = 38914;
-        modelcomp.meshNodesMapping[71] = 38915;
-        modelcomp.meshNodesMapping[72] = 38916;
-        modelcomp.meshNodesMapping[73] = 38917;
-        modelcomp.meshNodesMapping[74] = 38918;
-        modelcomp.meshNodesMapping[75] = 38919;
-        modelcomp.meshNodesMapping[76] = 38920;
-        modelcomp.meshNodesMapping[77] = 38921;
-        modelcomp.meshNodesMapping[78] = 38922;
-        modelcomp.meshNodesMapping[79] = 38923;
-        modelcomp.meshNodesMapping[80] = 38924;
-        modelcomp.meshNodesMapping[81] = 38925;
-        modelcomp.meshNodesMapping[82] = 38926;
-        modelcomp.meshNodesMapping[83] = 38927;
-        modelcomp.meshNodesMapping[84] = 38928;
-        modelcomp.meshNodesMapping[85] = 38929;
+        modelcomp.meshNodesMapping[0] = 38972;
+        modelcomp.meshNodesMapping[1] = 38973;
+        modelcomp.meshNodesMapping[2] = 38974;
+        modelcomp.meshNodesMapping[3] = 38975;
+        modelcomp.meshNodesMapping[4] = 38976;
+        modelcomp.meshNodesMapping[5] = 38977;
+        modelcomp.meshNodesMapping[6] = 38978;
+        modelcomp.meshNodesMapping[7] = 38979;
+        modelcomp.meshNodesMapping[8] = 38980;
+        modelcomp.meshNodesMapping[9] = 38981;
+        modelcomp.meshNodesMapping[10] = 38982;
+        modelcomp.meshNodesMapping[11] = 38983;
+        modelcomp.meshNodesMapping[12] = 38984;
+        modelcomp.meshNodesMapping[13] = 38985;
+        modelcomp.meshNodesMapping[14] = 38986;
+        modelcomp.meshNodesMapping[15] = 38987;
+        modelcomp.meshNodesMapping[16] = 38988;
+        modelcomp.meshNodesMapping[17] = 38989;
+        modelcomp.meshNodesMapping[18] = 38990;
+        modelcomp.meshNodesMapping[19] = 38991;
+        modelcomp.meshNodesMapping[20] = 38992;
+        modelcomp.meshNodesMapping[21] = 38993;
+        modelcomp.meshNodesMapping[22] = 38994;
+        modelcomp.meshNodesMapping[23] = 38995;
+        modelcomp.meshNodesMapping[24] = 38996;
+        modelcomp.meshNodesMapping[25] = 38997;
+        modelcomp.meshNodesMapping[26] = 38998;
+        modelcomp.meshNodesMapping[27] = 38999;
+        modelcomp.meshNodesMapping[28] = 39000;
+        modelcomp.meshNodesMapping[29] = 39001;
+        modelcomp.meshNodesMapping[30] = 39002;
+        modelcomp.meshNodesMapping[31] = 39003;
+        modelcomp.meshNodesMapping[32] = 39004;
+        modelcomp.meshNodesMapping[33] = 39005;
+        modelcomp.meshNodesMapping[34] = 39006;
+        modelcomp.meshNodesMapping[35] = 39007;
+        modelcomp.meshNodesMapping[36] = 39008;
+        modelcomp.meshNodesMapping[37] = 39009;
+        modelcomp.meshNodesMapping[38] = 39010;
+        modelcomp.meshNodesMapping[39] = 39011;
+        modelcomp.meshNodesMapping[40] = 39012;
+        modelcomp.meshNodesMapping[41] = 39013;
+        modelcomp.meshNodesMapping[42] = 39014;
+        modelcomp.meshNodesMapping[43] = 39015;
+        modelcomp.meshNodesMapping[44] = 39016;
+        modelcomp.meshNodesMapping[45] = 39017;
+        modelcomp.meshNodesMapping[46] = 39018;
+        modelcomp.meshNodesMapping[47] = 39019;
+        modelcomp.meshNodesMapping[48] = 39020;
+        modelcomp.meshNodesMapping[49] = 39021;
+        modelcomp.meshNodesMapping[50] = 39022;
+        modelcomp.meshNodesMapping[51] = 39023;
+        modelcomp.meshNodesMapping[52] = 39024;
+        modelcomp.meshNodesMapping[53] = 39025;
+        modelcomp.meshNodesMapping[54] = 39026;
+        modelcomp.meshNodesMapping[55] = 39027;
+        modelcomp.meshNodesMapping[56] = 39028;
+        modelcomp.meshNodesMapping[57] = 39029;
+        modelcomp.meshNodesMapping[58] = 39030;
+        modelcomp.meshNodesMapping[59] = 39031;
+        modelcomp.meshNodesMapping[60] = 39032;
+        modelcomp.meshNodesMapping[61] = 39033;
+        modelcomp.meshNodesMapping[62] = 39034;
+        modelcomp.meshNodesMapping[63] = 39035;
+        modelcomp.meshNodesMapping[64] = 39036;
+        modelcomp.meshNodesMapping[65] = 39037;
+        modelcomp.meshNodesMapping[66] = 39038;
+        modelcomp.meshNodesMapping[67] = 39039;
+        modelcomp.meshNodesMapping[68] = 39040;
+        modelcomp.meshNodesMapping[69] = 39041;
+        modelcomp.meshNodesMapping[70] = 39042;
+        modelcomp.meshNodesMapping[71] = 39043;
+        modelcomp.meshNodesMapping[72] = 39044;
+        modelcomp.meshNodesMapping[73] = 39045;
+        modelcomp.meshNodesMapping[74] = 39046;
+        modelcomp.meshNodesMapping[75] = 39047;
+        modelcomp.meshNodesMapping[76] = 39048;
+        modelcomp.meshNodesMapping[77] = 39049;
+        modelcomp.meshNodesMapping[78] = 39050;
+        modelcomp.meshNodesMapping[79] = 39051;
+        modelcomp.meshNodesMapping[80] = 39052;
+        modelcomp.meshNodesMapping[81] = 39053;
+        modelcomp.meshNodesMapping[82] = 39054;
+        modelcomp.meshNodesMapping[83] = 39055;
+        modelcomp.meshNodesMapping[84] = 39056;
+        modelcomp.meshNodesMapping[85] = 39057;
         scene->addComponent<ModelComponent>(1004, modelcomp);
 
         Transform transform;
@@ -1008,8 +1008,8 @@ void create_scene_Casa_126876070(Scene* scene){
     }
 
     {
-        // Entity 38844 (ArchWall)
-        scene->setEntityName(38844, "ArchWall");
+        // Entity 38972 (ArchWall)
+        scene->setEntityName(38972, "ArchWall");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1023,7 +1023,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38844, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38972, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1035,12 +1035,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38844, transform);
+        scene->addComponent<Transform>(38972, transform);
     }
 
     {
-        // Entity 38845 (Azulejos)
-        scene->setEntityName(38845, "Azulejos");
+        // Entity 38973 (Azulejos)
+        scene->setEntityName(38973, "Azulejos");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1054,7 +1054,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38845, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38973, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1066,12 +1066,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38845, transform);
+        scene->addComponent<Transform>(38973, transform);
     }
 
     {
-        // Entity 38846 (Decor_Basket)
-        scene->setEntityName(38846, "Decor_Basket");
+        // Entity 38974 (Decor_Basket)
+        scene->setEntityName(38974, "Decor_Basket");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1085,7 +1085,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38846, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38974, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1097,12 +1097,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38846, transform);
+        scene->addComponent<Transform>(38974, transform);
     }
 
     {
-        // Entity 38847 (Decor_Board)
-        scene->setEntityName(38847, "Decor_Board");
+        // Entity 38975 (Decor_Board)
+        scene->setEntityName(38975, "Decor_Board");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1116,7 +1116,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38847, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38975, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1128,12 +1128,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38847, transform);
+        scene->addComponent<Transform>(38975, transform);
     }
 
     {
-        // Entity 38848 (Decor_Books)
-        scene->setEntityName(38848, "Decor_Books");
+        // Entity 38976 (Decor_Books)
+        scene->setEntityName(38976, "Decor_Books");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1147,7 +1147,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 8;
-        scene->addComponent<MeshComponent>(38848, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38976, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1159,12 +1159,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38848, transform);
+        scene->addComponent<Transform>(38976, transform);
     }
 
     {
-        // Entity 38849 (Decor_Bottles)
-        scene->setEntityName(38849, "Decor_Bottles");
+        // Entity 38977 (Decor_Bottles)
+        scene->setEntityName(38977, "Decor_Bottles");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1178,7 +1178,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 3;
-        scene->addComponent<MeshComponent>(38849, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38977, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1190,12 +1190,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38849, transform);
+        scene->addComponent<Transform>(38977, transform);
     }
 
     {
-        // Entity 38850 (Decor_Bowl)
-        scene->setEntityName(38850, "Decor_Bowl");
+        // Entity 38978 (Decor_Bowl)
+        scene->setEntityName(38978, "Decor_Bowl");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1209,7 +1209,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38850, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38978, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1221,12 +1221,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38850, transform);
+        scene->addComponent<Transform>(38978, transform);
     }
 
     {
-        // Entity 38851 (Decor_Curtains)
-        scene->setEntityName(38851, "Decor_Curtains");
+        // Entity 38979 (Decor_Curtains)
+        scene->setEntityName(38979, "Decor_Curtains");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1240,7 +1240,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38851, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38979, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1252,12 +1252,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38851, transform);
+        scene->addComponent<Transform>(38979, transform);
     }
 
     {
-        // Entity 38852 (Decor_Fruit)
-        scene->setEntityName(38852, "Decor_Fruit");
+        // Entity 38980 (Decor_Fruit)
+        scene->setEntityName(38980, "Decor_Fruit");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1271,7 +1271,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38852, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38980, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1283,12 +1283,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38852, transform);
+        scene->addComponent<Transform>(38980, transform);
     }
 
     {
-        // Entity 38853 (Decor_Kettle)
-        scene->setEntityName(38853, "Decor_Kettle");
+        // Entity 38981 (Decor_Kettle)
+        scene->setEntityName(38981, "Decor_Kettle");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1302,7 +1302,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38853, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38981, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1314,12 +1314,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38853, transform);
+        scene->addComponent<Transform>(38981, transform);
     }
 
     {
-        // Entity 38854 (Decor_PictureBed)
-        scene->setEntityName(38854, "Decor_PictureBed");
+        // Entity 38982 (Decor_PictureBed)
+        scene->setEntityName(38982, "Decor_PictureBed");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1333,7 +1333,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 3;
-        scene->addComponent<MeshComponent>(38854, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38982, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1345,12 +1345,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38854, transform);
+        scene->addComponent<Transform>(38982, transform);
     }
 
     {
-        // Entity 38855 (Decor_PictureLiving)
-        scene->setEntityName(38855, "Decor_PictureLiving");
+        // Entity 38983 (Decor_PictureLiving)
+        scene->setEntityName(38983, "Decor_PictureLiving");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1364,7 +1364,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 3;
-        scene->addComponent<MeshComponent>(38855, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38983, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1376,12 +1376,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38855, transform);
+        scene->addComponent<Transform>(38983, transform);
     }
 
     {
-        // Entity 38856 (Decor_Pillows)
-        scene->setEntityName(38856, "Decor_Pillows");
+        // Entity 38984 (Decor_Pillows)
+        scene->setEntityName(38984, "Decor_Pillows");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1395,7 +1395,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38856, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38984, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1407,12 +1407,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38856, transform);
+        scene->addComponent<Transform>(38984, transform);
     }
 
     {
-        // Entity 38857 (Decor_Plant)
-        scene->setEntityName(38857, "Decor_Plant");
+        // Entity 38985 (Decor_Plant)
+        scene->setEntityName(38985, "Decor_Plant");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1426,7 +1426,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 3;
-        scene->addComponent<MeshComponent>(38857, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38985, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1438,12 +1438,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38857, transform);
+        scene->addComponent<Transform>(38985, transform);
     }
 
     {
-        // Entity 38858 (Decor_Rugs)
-        scene->setEntityName(38858, "Decor_Rugs");
+        // Entity 38986 (Decor_Rugs)
+        scene->setEntityName(38986, "Decor_Rugs");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1457,7 +1457,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38858, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38986, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1469,12 +1469,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38858, transform);
+        scene->addComponent<Transform>(38986, transform);
     }
 
     {
-        // Entity 38859 (Decor_VaseRack)
-        scene->setEntityName(38859, "Decor_VaseRack");
+        // Entity 38987 (Decor_VaseRack)
+        scene->setEntityName(38987, "Decor_VaseRack");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1488,7 +1488,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38859, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38987, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1500,12 +1500,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38859, transform);
+        scene->addComponent<Transform>(38987, transform);
     }
 
     {
-        // Entity 38860 (Decor_VaseTable)
-        scene->setEntityName(38860, "Decor_VaseTable");
+        // Entity 38988 (Decor_VaseTable)
+        scene->setEntityName(38988, "Decor_VaseTable");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1519,7 +1519,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38860, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38988, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1531,12 +1531,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38860, transform);
+        scene->addComponent<Transform>(38988, transform);
     }
 
     {
-        // Entity 38861 (Details)
-        scene->setEntityName(38861, "Details");
+        // Entity 38989 (Details)
+        scene->setEntityName(38989, "Details");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1550,7 +1550,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 5;
-        scene->addComponent<MeshComponent>(38861, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38989, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1562,12 +1562,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38861, transform);
+        scene->addComponent<Transform>(38989, transform);
     }
 
     {
-        // Entity 38862 (Door_Details)
-        scene->setEntityName(38862, "Door_Details");
+        // Entity 38990 (Door_Details)
+        scene->setEntityName(38990, "Door_Details");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1581,7 +1581,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 4;
-        scene->addComponent<MeshComponent>(38862, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38990, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1593,12 +1593,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38862, transform);
+        scene->addComponent<Transform>(38990, transform);
     }
 
     {
-        // Entity 38863 (Floor_Loft)
-        scene->setEntityName(38863, "Floor_Loft");
+        // Entity 38991 (Floor_Loft)
+        scene->setEntityName(38991, "Floor_Loft");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1612,7 +1612,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38863, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38991, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1624,12 +1624,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38863, transform);
+        scene->addComponent<Transform>(38991, transform);
     }
 
     {
-        // Entity 38864 (Floor_Porch)
-        scene->setEntityName(38864, "Floor_Porch");
+        // Entity 38992 (Floor_Porch)
+        scene->setEntityName(38992, "Floor_Porch");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1643,7 +1643,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38864, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38992, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1655,12 +1655,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38864, transform);
+        scene->addComponent<Transform>(38992, transform);
     }
 
     {
-        // Entity 38865 (Floor_Service)
-        scene->setEntityName(38865, "Floor_Service");
+        // Entity 38993 (Floor_Service)
+        scene->setEntityName(38993, "Floor_Service");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1674,7 +1674,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38865, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38993, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1686,12 +1686,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38865, transform);
+        scene->addComponent<Transform>(38993, transform);
     }
 
     {
-        // Entity 38866 (Floor_WC)
-        scene->setEntityName(38866, "Floor_WC");
+        // Entity 38994 (Floor_WC)
+        scene->setEntityName(38994, "Floor_WC");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1705,7 +1705,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38866, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38994, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1717,12 +1717,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38866, transform);
+        scene->addComponent<Transform>(38994, transform);
     }
 
     {
-        // Entity 38867 (Furn_Bed)
-        scene->setEntityName(38867, "Furn_Bed");
+        // Entity 38995 (Furn_Bed)
+        scene->setEntityName(38995, "Furn_Bed");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1736,7 +1736,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 6;
-        scene->addComponent<MeshComponent>(38867, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38995, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1748,12 +1748,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38867, transform);
+        scene->addComponent<Transform>(38995, transform);
     }
 
     {
-        // Entity 38868 (Furn_Divider)
-        scene->setEntityName(38868, "Furn_Divider");
+        // Entity 38996 (Furn_Divider)
+        scene->setEntityName(38996, "Furn_Divider");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1767,7 +1767,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 11;
-        scene->addComponent<MeshComponent>(38868, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38996, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1779,12 +1779,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38868, transform);
+        scene->addComponent<Transform>(38996, transform);
     }
 
     {
-        // Entity 38869 (Furn_Fridge)
-        scene->setEntityName(38869, "Furn_Fridge");
+        // Entity 38997 (Furn_Fridge)
+        scene->setEntityName(38997, "Furn_Fridge");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1798,7 +1798,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38869, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38997, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1810,12 +1810,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38869, transform);
+        scene->addComponent<Transform>(38997, transform);
     }
 
     {
-        // Entity 38870 (Furn_Laundry)
-        scene->setEntityName(38870, "Furn_Laundry");
+        // Entity 38998 (Furn_Laundry)
+        scene->setEntityName(38998, "Furn_Laundry");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1829,7 +1829,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 7;
-        scene->addComponent<MeshComponent>(38870, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38998, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1841,12 +1841,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38870, transform);
+        scene->addComponent<Transform>(38998, transform);
     }
 
     {
-        // Entity 38871 (Furn_Nightstands)
-        scene->setEntityName(38871, "Furn_Nightstands");
+        // Entity 38999 (Furn_Nightstands)
+        scene->setEntityName(38999, "Furn_Nightstands");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1860,7 +1860,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38871, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(38999, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1872,12 +1872,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38871, transform);
+        scene->addComponent<Transform>(38999, transform);
     }
 
     {
-        // Entity 38872 (Furn_Sofa)
-        scene->setEntityName(38872, "Furn_Sofa");
+        // Entity 39000 (Furn_Sofa)
+        scene->setEntityName(39000, "Furn_Sofa");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1891,7 +1891,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38872, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39000, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1903,12 +1903,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38872, transform);
+        scene->addComponent<Transform>(39000, transform);
     }
 
     {
-        // Entity 38873 (Furn_Stools)
-        scene->setEntityName(38873, "Furn_Stools");
+        // Entity 39001 (Furn_Stools)
+        scene->setEntityName(39001, "Furn_Stools");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1922,7 +1922,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38873, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39001, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1934,12 +1934,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38873, transform);
+        scene->addComponent<Transform>(39001, transform);
     }
 
     {
-        // Entity 38874 (Furn_Stove)
-        scene->setEntityName(38874, "Furn_Stove");
+        // Entity 39002 (Furn_Stove)
+        scene->setEntityName(39002, "Furn_Stove");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1953,7 +1953,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 4;
-        scene->addComponent<MeshComponent>(38874, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39002, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1965,12 +1965,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38874, transform);
+        scene->addComponent<Transform>(39002, transform);
     }
 
     {
-        // Entity 38875 (Furn_TVRack)
-        scene->setEntityName(38875, "Furn_TVRack");
+        // Entity 39003 (Furn_TVRack)
+        scene->setEntityName(39003, "Furn_TVRack");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -1984,7 +1984,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38875, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39003, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -1996,12 +1996,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38875, transform);
+        scene->addComponent<Transform>(39003, transform);
     }
 
     {
-        // Entity 38876 (Glazing)
-        scene->setEntityName(38876, "Glazing");
+        // Entity 39004 (Glazing)
+        scene->setEntityName(39004, "Glazing");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2015,7 +2015,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38876, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39004, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2027,12 +2027,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38876, transform);
+        scene->addComponent<Transform>(39004, transform);
     }
 
     {
-        // Entity 38877 (Joinery)
-        scene->setEntityName(38877, "Joinery");
+        // Entity 39005 (Joinery)
+        scene->setEntityName(39005, "Joinery");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2046,7 +2046,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38877, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39005, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2058,12 +2058,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38877, transform);
+        scene->addComponent<Transform>(39005, transform);
     }
 
     {
-        // Entity 38878 (Kitchen)
-        scene->setEntityName(38878, "Kitchen");
+        // Entity 39006 (Kitchen)
+        scene->setEntityName(39006, "Kitchen");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2077,7 +2077,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 7;
-        scene->addComponent<MeshComponent>(38878, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39006, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2089,12 +2089,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38878, transform);
+        scene->addComponent<Transform>(39006, transform);
     }
 
     {
-        // Entity 38879 (Lamp_Fixtures)
-        scene->setEntityName(38879, "Lamp_Fixtures");
+        // Entity 39007 (Lamp_Fixtures)
+        scene->setEntityName(39007, "Lamp_Fixtures");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2108,7 +2108,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 8;
-        scene->addComponent<MeshComponent>(38879, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39007, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2120,12 +2120,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38879, transform);
+        scene->addComponent<Transform>(39007, transform);
     }
 
     {
-        // Entity 38880 (Lampada_1)
-        scene->setEntityName(38880, "Lampada_1");
+        // Entity 39008 (Lampada_1)
+        scene->setEntityName(39008, "Lampada_1");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2139,7 +2139,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38880, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39008, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2151,12 +2151,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38880, transform);
+        scene->addComponent<Transform>(39008, transform);
     }
 
     {
-        // Entity 38881 (Lampada_2)
-        scene->setEntityName(38881, "Lampada_2");
+        // Entity 39009 (Lampada_2)
+        scene->setEntityName(39009, "Lampada_2");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2170,7 +2170,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38881, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39009, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2182,12 +2182,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38881, transform);
+        scene->addComponent<Transform>(39009, transform);
     }
 
     {
-        // Entity 38882 (Lampada_3)
-        scene->setEntityName(38882, "Lampada_3");
+        // Entity 39010 (Lampada_3)
+        scene->setEntityName(39010, "Lampada_3");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2201,7 +2201,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38882, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39010, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2213,12 +2213,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38882, transform);
+        scene->addComponent<Transform>(39010, transform);
     }
 
     {
-        // Entity 38883 (Lampada_4)
-        scene->setEntityName(38883, "Lampada_4");
+        // Entity 39011 (Lampada_4)
+        scene->setEntityName(39011, "Lampada_4");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2232,7 +2232,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38883, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39011, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2244,12 +2244,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38883, transform);
+        scene->addComponent<Transform>(39011, transform);
     }
 
     {
-        // Entity 38884 (Lampada_5)
-        scene->setEntityName(38884, "Lampada_5");
+        // Entity 39012 (Lampada_5)
+        scene->setEntityName(39012, "Lampada_5");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2263,7 +2263,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38884, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39012, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2275,12 +2275,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38884, transform);
+        scene->addComponent<Transform>(39012, transform);
     }
 
     {
-        // Entity 38885 (Lampada_6)
-        scene->setEntityName(38885, "Lampada_6");
+        // Entity 39013 (Lampada_6)
+        scene->setEntityName(39013, "Lampada_6");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2294,7 +2294,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38885, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39013, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2306,12 +2306,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38885, transform);
+        scene->addComponent<Transform>(39013, transform);
     }
 
     {
-        // Entity 38886 (Lampada_7)
-        scene->setEntityName(38886, "Lampada_7");
+        // Entity 39014 (Lampada_7)
+        scene->setEntityName(39014, "Lampada_7");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2325,7 +2325,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38886, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39014, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2337,12 +2337,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38886, transform);
+        scene->addComponent<Transform>(39014, transform);
     }
 
     {
-        // Entity 38887 (Lampada_8)
-        scene->setEntityName(38887, "Lampada_8");
+        // Entity 39015 (Lampada_8)
+        scene->setEntityName(39015, "Lampada_8");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2356,7 +2356,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38887, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39015, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2368,12 +2368,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38887, transform);
+        scene->addComponent<Transform>(39015, transform);
     }
 
     {
-        // Entity 38888 (Lampada_9)
-        scene->setEntityName(38888, "Lampada_9");
+        // Entity 39016 (Lampada_9)
+        scene->setEntityName(39016, "Lampada_9");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2387,7 +2387,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38888, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39016, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2399,12 +2399,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38888, transform);
+        scene->addComponent<Transform>(39016, transform);
     }
 
     {
-        // Entity 38889 (Lampada_10)
-        scene->setEntityName(38889, "Lampada_10");
+        // Entity 39017 (Lampada_10)
+        scene->setEntityName(39017, "Lampada_10");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2418,7 +2418,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38889, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39017, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2430,12 +2430,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38889, transform);
+        scene->addComponent<Transform>(39017, transform);
     }
 
     {
-        // Entity 38890 (Lampada_11)
-        scene->setEntityName(38890, "Lampada_11");
+        // Entity 39018 (Lampada_11)
+        scene->setEntityName(39018, "Lampada_11");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2449,7 +2449,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38890, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39018, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2461,12 +2461,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38890, transform);
+        scene->addComponent<Transform>(39018, transform);
     }
 
     {
-        // Entity 38891 (Lampada_12)
-        scene->setEntityName(38891, "Lampada_12");
+        // Entity 39019 (Lampada_12)
+        scene->setEntityName(39019, "Lampada_12");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2480,7 +2480,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38891, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39019, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2492,12 +2492,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38891, transform);
+        scene->addComponent<Transform>(39019, transform);
     }
 
     {
-        // Entity 38892 (Lampada_13)
-        scene->setEntityName(38892, "Lampada_13");
+        // Entity 39020 (Lampada_13)
+        scene->setEntityName(39020, "Lampada_13");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2511,7 +2511,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38892, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39020, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2523,12 +2523,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38892, transform);
+        scene->addComponent<Transform>(39020, transform);
     }
 
     {
-        // Entity 38893 (Lampada_14)
-        scene->setEntityName(38893, "Lampada_14");
+        // Entity 39021 (Lampada_14)
+        scene->setEntityName(39021, "Lampada_14");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2542,7 +2542,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38893, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39021, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2554,12 +2554,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38893, transform);
+        scene->addComponent<Transform>(39021, transform);
     }
 
     {
-        // Entity 38894 (Lampada_15)
-        scene->setEntityName(38894, "Lampada_15");
+        // Entity 39022 (Lampada_15)
+        scene->setEntityName(39022, "Lampada_15");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2573,7 +2573,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38894, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39022, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2585,12 +2585,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38894, transform);
+        scene->addComponent<Transform>(39022, transform);
     }
 
     {
-        // Entity 38895 (Lot_Fence)
-        scene->setEntityName(38895, "Lot_Fence");
+        // Entity 39023 (Lot_Fence)
+        scene->setEntityName(39023, "Lot_Fence");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2604,7 +2604,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38895, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39023, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2616,12 +2616,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38895, transform);
+        scene->addComponent<Transform>(39023, transform);
     }
 
     {
-        // Entity 38896 (Lot_Gate)
-        scene->setEntityName(38896, "Lot_Gate");
+        // Entity 39024 (Lot_Gate)
+        scene->setEntityName(39024, "Lot_Gate");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2635,7 +2635,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38896, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39024, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2647,12 +2647,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38896, transform);
+        scene->addComponent<Transform>(39024, transform);
     }
 
     {
-        // Entity 38897 (Lot_Meter)
-        scene->setEntityName(38897, "Lot_Meter");
+        // Entity 39025 (Lot_Meter)
+        scene->setEntityName(39025, "Lot_Meter");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2666,7 +2666,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 5;
-        scene->addComponent<MeshComponent>(38897, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39025, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2678,12 +2678,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38897, transform);
+        scene->addComponent<Transform>(39025, transform);
     }
 
     {
-        // Entity 38898 (Lot_Path)
-        scene->setEntityName(38898, "Lot_Path");
+        // Entity 39026 (Lot_Path)
+        scene->setEntityName(39026, "Lot_Path");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2697,7 +2697,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38898, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39026, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2709,12 +2709,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38898, transform);
+        scene->addComponent<Transform>(39026, transform);
     }
 
     {
-        // Entity 38899 (Lot_Power)
-        scene->setEntityName(38899, "Lot_Power");
+        // Entity 39027 (Lot_Power)
+        scene->setEntityName(39027, "Lot_Power");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2728,7 +2728,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 3;
-        scene->addComponent<MeshComponent>(38899, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39027, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2740,12 +2740,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38899, transform);
+        scene->addComponent<Transform>(39027, transform);
     }
 
     {
-        // Entity 38900 (Plant_Anthurium1)
-        scene->setEntityName(38900, "Plant_Anthurium1");
+        // Entity 39028 (Plant_Anthurium1)
+        scene->setEntityName(39028, "Plant_Anthurium1");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2759,7 +2759,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38900, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39028, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2771,12 +2771,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38900, transform);
+        scene->addComponent<Transform>(39028, transform);
     }
 
     {
-        // Entity 38901 (Plant_Anthurium2)
-        scene->setEntityName(38901, "Plant_Anthurium2");
+        // Entity 39029 (Plant_Anthurium2)
+        scene->setEntityName(39029, "Plant_Anthurium2");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2790,7 +2790,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38901, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39029, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2802,12 +2802,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38901, transform);
+        scene->addComponent<Transform>(39029, transform);
     }
 
     {
-        // Entity 38902 (Plant_Anthurium3)
-        scene->setEntityName(38902, "Plant_Anthurium3");
+        // Entity 39030 (Plant_Anthurium3)
+        scene->setEntityName(39030, "Plant_Anthurium3");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2821,7 +2821,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38902, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39030, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2833,12 +2833,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38902, transform);
+        scene->addComponent<Transform>(39030, transform);
     }
 
     {
-        // Entity 38903 (Plant_Calathea)
-        scene->setEntityName(38903, "Plant_Calathea");
+        // Entity 39031 (Plant_Calathea)
+        scene->setEntityName(39031, "Plant_Calathea");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2852,7 +2852,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38903, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39031, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2864,12 +2864,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38903, transform);
+        scene->addComponent<Transform>(39031, transform);
     }
 
     {
-        // Entity 38904 (Plant_Fern1)
-        scene->setEntityName(38904, "Plant_Fern1");
+        // Entity 39032 (Plant_Fern1)
+        scene->setEntityName(39032, "Plant_Fern1");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2883,7 +2883,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38904, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39032, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2895,12 +2895,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38904, transform);
+        scene->addComponent<Transform>(39032, transform);
     }
 
     {
-        // Entity 38905 (Plant_Fern2)
-        scene->setEntityName(38905, "Plant_Fern2");
+        // Entity 39033 (Plant_Fern2)
+        scene->setEntityName(39033, "Plant_Fern2");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2914,7 +2914,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38905, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39033, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2926,12 +2926,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38905, transform);
+        scene->addComponent<Transform>(39033, transform);
     }
 
     {
-        // Entity 38906 (Plant_Shrub1)
-        scene->setEntityName(38906, "Plant_Shrub1");
+        // Entity 39034 (Plant_Shrub1)
+        scene->setEntityName(39034, "Plant_Shrub1");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2945,7 +2945,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 4;
-        scene->addComponent<MeshComponent>(38906, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39034, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2957,12 +2957,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38906, transform);
+        scene->addComponent<Transform>(39034, transform);
     }
 
     {
-        // Entity 38907 (Plant_Shrub2)
-        scene->setEntityName(38907, "Plant_Shrub2");
+        // Entity 39035 (Plant_Shrub2)
+        scene->setEntityName(39035, "Plant_Shrub2");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -2976,7 +2976,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 4;
-        scene->addComponent<MeshComponent>(38907, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39035, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -2988,12 +2988,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38907, transform);
+        scene->addComponent<Transform>(39035, transform);
     }
 
     {
-        // Entity 38908 (Plant_Shrub3)
-        scene->setEntityName(38908, "Plant_Shrub3");
+        // Entity 39036 (Plant_Shrub3)
+        scene->setEntityName(39036, "Plant_Shrub3");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3007,7 +3007,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 4;
-        scene->addComponent<MeshComponent>(38908, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39036, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3019,12 +3019,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38908, transform);
+        scene->addComponent<Transform>(39036, transform);
     }
 
     {
-        // Entity 38909 (Porch_Hammock)
-        scene->setEntityName(38909, "Porch_Hammock");
+        // Entity 39037 (Porch_Hammock)
+        scene->setEntityName(39037, "Porch_Hammock");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3038,7 +3038,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38909, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39037, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3050,12 +3050,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38909, transform);
+        scene->addComponent<Transform>(39037, transform);
     }
 
     {
-        // Entity 38910 (Porch_PotLeft)
-        scene->setEntityName(38910, "Porch_PotLeft");
+        // Entity 39038 (Porch_PotLeft)
+        scene->setEntityName(39038, "Porch_PotLeft");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3069,7 +3069,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 3;
-        scene->addComponent<MeshComponent>(38910, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39038, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3081,12 +3081,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38910, transform);
+        scene->addComponent<Transform>(39038, transform);
     }
 
     {
-        // Entity 38911 (Porch_PotRight)
-        scene->setEntityName(38911, "Porch_PotRight");
+        // Entity 39039 (Porch_PotRight)
+        scene->setEntityName(39039, "Porch_PotRight");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3100,7 +3100,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 3;
-        scene->addComponent<MeshComponent>(38911, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39039, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3112,12 +3112,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38911, transform);
+        scene->addComponent<Transform>(39039, transform);
     }
 
     {
-        // Entity 38912 (Porch_RockingChair)
-        scene->setEntityName(38912, "Porch_RockingChair");
+        // Entity 39040 (Porch_RockingChair)
+        scene->setEntityName(39040, "Porch_RockingChair");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3131,7 +3131,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38912, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39040, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3143,12 +3143,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38912, transform);
+        scene->addComponent<Transform>(39040, transform);
     }
 
     {
-        // Entity 38913 (Porch_TableSet)
-        scene->setEntityName(38913, "Porch_TableSet");
+        // Entity 39041 (Porch_TableSet)
+        scene->setEntityName(39041, "Porch_TableSet");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3162,7 +3162,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 3;
-        scene->addComponent<MeshComponent>(38913, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39041, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3174,12 +3174,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38913, transform);
+        scene->addComponent<Transform>(39041, transform);
     }
 
     {
-        // Entity 38914 (Posts)
-        scene->setEntityName(38914, "Posts");
+        // Entity 39042 (Posts)
+        scene->setEntityName(39042, "Posts");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3193,7 +3193,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38914, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39042, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3205,12 +3205,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38914, transform);
+        scene->addComponent<Transform>(39042, transform);
     }
 
     {
-        // Entity 38915 (RoofTiles)
-        scene->setEntityName(38915, "RoofTiles");
+        // Entity 39043 (RoofTiles)
+        scene->setEntityName(39043, "RoofTiles");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3224,7 +3224,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38915, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39043, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3236,12 +3236,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38915, transform);
+        scene->addComponent<Transform>(39043, transform);
     }
 
     {
-        // Entity 38916 (RoofTimber)
-        scene->setEntityName(38916, "RoofTimber");
+        // Entity 39044 (RoofTimber)
+        scene->setEntityName(39044, "RoofTimber");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3255,7 +3255,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38916, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39044, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3267,12 +3267,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38916, transform);
+        scene->addComponent<Transform>(39044, transform);
     }
 
     {
-        // Entity 38917 (Skirt)
-        scene->setEntityName(38917, "Skirt");
+        // Entity 39045 (Skirt)
+        scene->setEntityName(39045, "Skirt");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3286,7 +3286,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38917, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39045, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3298,12 +3298,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38917, transform);
+        scene->addComponent<Transform>(39045, transform);
     }
 
     {
-        // Entity 38918 (Slabs)
-        scene->setEntityName(38918, "Slabs");
+        // Entity 39046 (Slabs)
+        scene->setEntityName(39046, "Slabs");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3317,7 +3317,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38918, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39046, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3329,12 +3329,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38918, transform);
+        scene->addComponent<Transform>(39046, transform);
     }
 
     {
-        // Entity 38919 (Tower)
-        scene->setEntityName(38919, "Tower");
+        // Entity 39047 (Tower)
+        scene->setEntityName(39047, "Tower");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3348,7 +3348,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38919, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39047, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3360,12 +3360,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38919, transform);
+        scene->addComponent<Transform>(39047, transform);
     }
 
     {
-        // Entity 38920 (Trim_Electrical)
-        scene->setEntityName(38920, "Trim_Electrical");
+        // Entity 39048 (Trim_Electrical)
+        scene->setEntityName(39048, "Trim_Electrical");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3379,7 +3379,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 3;
-        scene->addComponent<MeshComponent>(38920, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39048, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3391,12 +3391,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38920, transform);
+        scene->addComponent<Transform>(39048, transform);
     }
 
     {
-        // Entity 38921 (Trim_Plumbing)
-        scene->setEntityName(38921, "Trim_Plumbing");
+        // Entity 39049 (Trim_Plumbing)
+        scene->setEntityName(39049, "Trim_Plumbing");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3410,7 +3410,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 5;
-        scene->addComponent<MeshComponent>(38921, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39049, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3422,12 +3422,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38921, transform);
+        scene->addComponent<Transform>(39049, transform);
     }
 
     {
-        // Entity 38922 (Trim_Skirting)
-        scene->setEntityName(38922, "Trim_Skirting");
+        // Entity 39050 (Trim_Skirting)
+        scene->setEntityName(39050, "Trim_Skirting");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3441,7 +3441,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38922, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39050, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3453,12 +3453,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38922, transform);
+        scene->addComponent<Transform>(39050, transform);
     }
 
     {
-        // Entity 38923 (Walls)
-        scene->setEntityName(38923, "Walls");
+        // Entity 39051 (Walls)
+        scene->setEntityName(39051, "Walls");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3472,7 +3472,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38923, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39051, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3484,12 +3484,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38923, transform);
+        scene->addComponent<Transform>(39051, transform);
     }
 
     {
-        // Entity 38924 (WC)
-        scene->setEntityName(38924, "WC");
+        // Entity 39052 (WC)
+        scene->setEntityName(39052, "WC");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3503,7 +3503,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38924, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39052, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3515,12 +3515,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38924, transform);
+        scene->addComponent<Transform>(39052, transform);
     }
 
     {
-        // Entity 38925 (WC_Fixtures)
-        scene->setEntityName(38925, "WC_Fixtures");
+        // Entity 39053 (WC_Fixtures)
+        scene->setEntityName(39053, "WC_Fixtures");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3534,7 +3534,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 9;
-        scene->addComponent<MeshComponent>(38925, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39053, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3546,12 +3546,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38925, transform);
+        scene->addComponent<Transform>(39053, transform);
     }
 
     {
-        // Entity 38926 (WC_Glass)
-        scene->setEntityName(38926, "WC_Glass");
+        // Entity 39054 (WC_Glass)
+        scene->setEntityName(39054, "WC_Glass");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3565,7 +3565,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38926, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39054, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3577,12 +3577,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38926, transform);
+        scene->addComponent<Transform>(39054, transform);
     }
 
     {
-        // Entity 38927 (WC_Mirror)
-        scene->setEntityName(38927, "WC_Mirror");
+        // Entity 39055 (WC_Mirror)
+        scene->setEntityName(39055, "WC_Mirror");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3596,7 +3596,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 1;
-        scene->addComponent<MeshComponent>(38927, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39055, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3608,12 +3608,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38927, transform);
+        scene->addComponent<Transform>(39055, transform);
     }
 
     {
-        // Entity 38928 (WC_Towels)
-        scene->setEntityName(38928, "WC_Towels");
+        // Entity 39056 (WC_Towels)
+        scene->setEntityName(39056, "WC_Towels");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3627,7 +3627,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38928, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39056, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3639,12 +3639,12 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38928, transform);
+        scene->addComponent<Transform>(39056, transform);
     }
 
     {
-        // Entity 38929 (WCCeiling)
-        scene->setEntityName(38929, "WCCeiling");
+        // Entity 39057 (WCCeiling)
+        scene->setEntityName(39057, "WCCeiling");
 
         // Entity components initialization
         auto meshStorage = std::make_unique<MeshComponent>();
@@ -3658,7 +3658,7 @@ void create_scene_Casa_126876070(Scene* scene){
         mesh.renderInReflectionProbes = true;
         mesh.vertexCount = 0;
         mesh.numSubmeshes = 2;
-        scene->addComponent<MeshComponent>(38929, std::move(*meshStorage));
+        scene->addComponent<MeshComponent>(39057, std::move(*meshStorage));
 
         Transform transform;
         transform.position = Vector3(0.000000f, 0.000000f, 0.000000f);
@@ -3670,7 +3670,7 @@ void create_scene_Casa_126876070(Scene* scene){
         transform.cylindricalBillboard = false;
         transform.billboardRotation = Quaternion(1.000000f, 0.000000f, 0.000000f, 0.000000f);
         transform.parent = 1004;
-        scene->addComponent<Transform>(38929, transform);
+        scene->addComponent<Transform>(39057, transform);
     }
 
     {

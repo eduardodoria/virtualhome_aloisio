@@ -17,7 +17,6 @@
 #include "util/Angle.h"
 #include "util/Color.h"
 #include "buffer/ExternalBuffer.h"
-#include "component/MeshPolygonComponent.h"
 #include "math/AABB.h"
 #include "pool/TextureDataPool.h"
 #include "subsystem/PhysicsSystem.h"
@@ -8654,7 +8653,7 @@ void RenderSystem::getLoadCount(size_t& loaded, size_t& total) const{
         const MeshComponent& mesh = meshes->getComponentFromIndex(i);
         // An empty tilemap never loads: loadMesh() has no buffers to create until a tile is added.
         if (!mesh.loaded) {
-            const Entity entity = meshes->getEntity(i);
+            Entity entity = meshes->getEntity(i);
             const TilemapComponent* tilemap = scene->findComponent<TilemapComponent>(entity);
             if (tilemap && tilemap->numTiles == 0)
                 continue;
