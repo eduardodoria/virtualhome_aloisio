@@ -36,6 +36,9 @@
 #include <string>
 #include <unordered_map>
 
+// local reflection probes the SSR composite rebuilds per view (composite.frag)
+#define SSR_PROBE_SLOTS 4
+
 namespace doriax{
 	// mirrored by the u_fs_lighting block of mesh.frag and water.frag
 	typedef struct fs_lighting_t {
@@ -118,7 +121,7 @@ namespace doriax{
 	} vs_gbuffer_t;
 
 	typedef struct fs_gbuffer_material_t {
-		Vector4 params;             // x = roughness, y = metallic, z = IBL source, w = alpha cutout
+		Vector4 params;             // x = roughness, y = metallic, z = IBL source code / 255, w = alpha cutout
 		Vector4 baseColorFactor;
 	} fs_gbuffer_material_t;
 
@@ -148,8 +151,11 @@ namespace doriax{
 	typedef struct fs_composite_t {
 		Matrix4 invProjection;
 		Matrix4 invView;
-		Vector4 params;   // x=intensity, y=flip G-buffer Y, z=debug, w=unused
+		Vector4 params;   // x=intensity, y=flip G-buffer Y, z=debug, w=flip destination Y
 		Vector4 envColor; // rgb = env color (linear), w = env rotation (radians)
+		Vector4 probePosition[SSR_PROBE_SLOTS]; // xyz = capture position
+		Vector4 probeBoxMin[SSR_PROBE_SLOTS];   // xyz = influence AABB min, w = intensity
+		Vector4 probeBoxMax[SSR_PROBE_SLOTS];   // xyz = influence AABB max, w = max mip LOD
 	} fs_composite_t;
 
 	typedef struct fs_blit_t {
@@ -184,6 +190,8 @@ namespace doriax{
 		Vector4 exclusionCount; // x = volumes keeping the water out
 		Vector4 exclusionRows[MAX_WATER_EXCLUSIONS * 3]; // world to 0-1 across the volume, three rows each
 		Vector4 exclusionShapes[MAX_WATER_EXCLUSIONS];   // x = shape, y = hull map layer
+		Vector4 wakeArea;      // xy = world corner of the wake map, z = 1 / its world size, w = 1 when active
+		Vector4 wakeParams;    // x = wave slope scale, y = 1 / texels across
 	} fs_water_t;
 
 	typedef struct fs_underwater_t {
@@ -638,7 +646,7 @@ namespace doriax{
 		bool ssrLoaded;
 		unsigned int ssrWidth;
 		unsigned int ssrHeight;
-		Framebuffer gbufferFramebuffer;    // MRT: color[0] packed depth, color[1] view-space normal/roughness/metallic
+		Framebuffer gbufferFramebuffer;    // MRT: color[0] packed depth, color[1] view-space normal/roughness/metallic, color[2] albedo/IBL source, color[3] occlusion
 		Framebuffer sceneColorFramebuffer; // offscreen opaque scene color (top-left)
 		Framebuffer ssrFramebuffer;        // reflection color + mask (logical orientation)
 		Framebuffer ssrBlurFramebuffer;    // glossy-blurred reflection
@@ -656,6 +664,10 @@ namespace doriax{
 		int ssrSlotParams;
 		int ssrBlurSlotParams;
 		int compositeSlotParams;
+		std::pair<int, int> compositeProbeSlots[SSR_PROBE_SLOTS]; // u_probeTexture0..3 bindings
+		std::pair<int, int> compositeOcclusionSlot;               // u_occlusionGBufferTexture binding
+		TextureRender* ssrProbeTextures[SSR_PROBE_SLOTS]; // probes the G-buffer pass gave a slot
+		int ssrProbeCount;
 		bool swapchainRedirect;            // exported builds: the last pass targets the swapchain
 
 		// Fixed game resolution: when enabled on the Engine main scene (Scene
@@ -877,7 +889,7 @@ namespace doriax{
 		// G-buffer geometry pass for SSR: MRT packed depth + view-space normal/roughness/metallic
 		bool ensureGBufferFramebuffer(unsigned int width, unsigned int height);
 		void renderGBufferPass(CameraComponent& camera);
-		bool drawMeshGBuffer(Entity entity, MeshComponent& mesh, Transform& transform, const float cameraFar, const Plane frustumPlanes[6], vs_gbuffer_t vsGBufferParams, bool hasLocalProbe, InstancedMeshComponent* instmesh, TerrainComponent* terrain, TilemapComponent* tilemap, int instanceView = -1, const LodView* lodView = nullptr);
+		bool drawMeshGBuffer(Entity entity, MeshComponent& mesh, Transform& transform, const float cameraFar, const Plane frustumPlanes[6], vs_gbuffer_t vsGBufferParams, int iblCode, InstancedMeshComponent* instmesh, TerrainComponent* terrain, TilemapComponent* tilemap, int instanceView = -1, const LodView* lodView = nullptr);
 		// destination == nullptr renders the composite to the swapchain (backbuffer)
 		void renderSSR(CameraComponent& camera, FramebufferRender* destination);
 
@@ -926,6 +938,7 @@ namespace doriax{
 		bool loadUnderwater(WaterComponent& water);
 		void updateWaterExclusions();
 		void setWaterExclusionParams(const WaterComponent& water, const Vector3& eye, fs_water_t& params);
+		void updateWaterWakes(double dt, const CameraComponent& camera, const Transform& cameraTransform);
 		// the fullscreen fade of the scene copy, in the pass already started
 		void drawUnderwater(WaterComponent& water, CameraComponent& camera, Transform& cameraTransform);
 
@@ -963,6 +976,8 @@ namespace doriax{
 		void setWaterPaused(bool waterPaused);
 		// moves the waves by the update time since the last call; draw() does it after drawing
 		void advanceWaters();
+		// drops all wakes, the editor calls it on Stop
+		void clearWaterWakes();
 
 		// the depth pass alpha-tests the submesh (MASK, or the legacy AUTO + textureShadow);
 		// the editor derives export keys from it, so the rule lives in one place

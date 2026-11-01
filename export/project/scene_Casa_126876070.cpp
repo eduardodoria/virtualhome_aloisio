@@ -3998,6 +3998,8 @@ void create_scene_Casa_126876070(Scene* scene){
         water.underwater = false;
         water.buoyancy = false;
         water.buoyancyDepth = 0.000000f;
+        water.wakeArea = 64.000000f;
+        water.wakeFade = 8.000000f;
         scene->addComponent<WaterComponent>(1330, water);
 
         Transform transform;

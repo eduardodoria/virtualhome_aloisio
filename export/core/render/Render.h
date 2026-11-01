@@ -185,7 +185,7 @@ namespace doriax{
         SCENECOLORTEXTURE,
         SSRTEXTURE,
         GBUFFERTEXTURE,      // view-space normal (rg, octahedral) + roughness (b) + metallic (a)
-        GBUFFERALBEDOTEXTURE, // linear base color (rgb) + hasIBL flag (a)
+        GBUFFERALBEDOTEXTURE, // linear base color (rgb) + IBL source code (a)
         SHADOW2DATLAS,       // 1D polar shadow rows (one per 2D light)
         SPOTMASKATLAS,       // projected spot masks, one horizontal tile per 3D light slot
         BONES,
@@ -193,7 +193,8 @@ namespace doriax{
         WATERREFLECTION,     // water planar reflection camera target
         WATERREFRACTION,     // copy of the scene drawn before the water
         WATEREXCLUSION,      // hull maps of the volumes keeping the water out
-        PROBESOURCE          // reflection probe capture read by the prefilter
+        PROBESOURCE,         // reflection probe capture read by the prefilter
+        WATERWAKE            // foam and waves left by moving water exclusions
     };
 
     enum class TextureType {

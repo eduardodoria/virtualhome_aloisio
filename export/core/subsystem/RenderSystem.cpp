@@ -376,6 +376,12 @@ RenderSystem::RenderSystem(Scene* scene): SubSystem(scene){
     ssrSlotParams = -1;
     ssrBlurSlotParams = -1;
     compositeSlotParams = -1;
+    for (int s = 0; s < SSR_PROBE_SLOTS; s++){
+        compositeProbeSlots[s] = std::pair<int, int>(-1, -1);
+        ssrProbeTextures[s] = nullptr;
+    }
+    compositeOcclusionSlot = std::pair<int, int>(-1, -1);
+    ssrProbeCount = 0;
     swapchainRedirect = false;
 
     blitLoaded = false;
@@ -2454,6 +2460,16 @@ bool RenderSystem::loadGBufferTextures(Material& material, ShaderData& shaderDat
         render.addTexture(slotMR, ShaderStageType::FRAGMENT, t);
     }
 
+    // baked occlusion, written to color[3] for the SSR composite
+    std::pair<int, int> slotOcclusion = shaderData.getTextureIndex(TextureShaderType::OCCULSION);
+    if (slotOcclusion.first != -1){
+        TextureRender* t = material.occlusionTexture.getRender(&emptyWhite);
+        if (!t || !t->isCreated()){
+            return false;
+        }
+        render.addTexture(slotOcclusion, ShaderStageType::FRAGMENT, t);
+    }
+
     return true;
 }
 
@@ -3241,10 +3257,14 @@ bool RenderSystem::loadMesh(Entity entity, MeshComponent& mesh, uint16_t pipelin
         if (scene->isSSREnabled()){
             bool gbufferHasBaseColorTex = !mesh.submeshes[i].material.baseColorTexture.empty();
             bool gbufferHasMRTex = !mesh.submeshes[i].material.metallicRoughnessTexture.empty();
+            // the color pass's baked occlusion, on the same UV set
+            bool gbufferHasOcclusionTex = !terrain && p_hasTexture1 && !mesh.submeshes[i].material.occlusionTexture.empty();
+            bool gbufferOcclusionUV2 = p_hasTexture2 && mesh.submeshes[i].material.occlusionTexCoord == 1;
             mesh.submeshes[i].gbufferShaderProperties = ShaderPool::getGBufferMeshProperties(
                 gbufferHasBaseColorTex, mesh.submeshes[i].hasNormal, mesh.submeshes[i].hasSkinning,
                 mesh.submeshes[i].hasMorphTarget, mesh.submeshes[i].hasMorphNormal, mesh.submeshes[i].hasMorphTangent,
-                (terrain)?true:false, (instmesh)?true:false, gbufferHasMRTex, p_terrainSurface && mesh.submeshes[i].hasNormal);
+                (terrain)?true:false, (instmesh)?true:false, gbufferHasMRTex, p_terrainSurface && mesh.submeshes[i].hasNormal,
+                gbufferHasOcclusionTex, gbufferOcclusionUV2);
             mesh.submeshes[i].gbufferShader = ShaderPool::get(ShaderType::GBUFFER, mesh.submeshes[i].gbufferShaderProperties);
             if (!mesh.submeshes[i].gbufferShader->isCreated())
                 return false;
@@ -3600,7 +3620,8 @@ bool RenderSystem::loadMesh(Entity entity, MeshComponent& mesh, uint16_t pipelin
                         gbufferRender.setIndex(buf.second->getRender(), indexattr.getDataType(), indexattr.getOffset());
                     }else{
                         for (auto const &attr : buf.second->getAttributes()){
-                            if (attr.first == AttributeType::POSITION || attr.first == AttributeType::TEXCOORD1 || attr.first == AttributeType::NORMAL){
+                            if (attr.first == AttributeType::POSITION || attr.first == AttributeType::TEXCOORD1 || attr.first == AttributeType::NORMAL ||
+                                    attr.first == AttributeType::TEXCOORD2){
                                 gbufferRender.addAttribute(gbufferShaderData.getAttrIndex(attr.first), buf.second->getRender(), attr.second.getElements(), attr.second.getDataType(), buf.second->getStride(), attr.second.getOffset(), attr.second.getNormalized(), attr.second.getPerInstance());
                             }
                             if (mesh.submeshes[i].hasSkinning){
@@ -3628,7 +3649,8 @@ bool RenderSystem::loadMesh(Entity entity, MeshComponent& mesh, uint16_t pipelin
                 if (bufferNameToRender.count(attr.second.getBufferName())){
                     if (attr.first == AttributeType::INDEX){
                         gbufferRender.setIndex(bufferNameToRender[attr.second.getBufferName()], attr.second.getDataType(), attr.second.getOffset());
-                    }else if (attr.first == AttributeType::POSITION || attr.first == AttributeType::TEXCOORD1 || attr.first == AttributeType::NORMAL){
+                    }else if (attr.first == AttributeType::POSITION || attr.first == AttributeType::TEXCOORD1 || attr.first == AttributeType::NORMAL ||
+                            attr.first == AttributeType::TEXCOORD2){
                         gbufferRender.addAttribute(gbufferShaderData.getAttrIndex(attr.first), bufferNameToRender[attr.second.getBufferName()], attr.second.getElements(), attr.second.getDataType(), bufferStride[attr.second.getBufferName()], attr.second.getOffset(), attr.second.getNormalized(), attr.second.getPerInstance());
                     }
                     if (mesh.submeshes[i].hasSkinning){
@@ -5343,9 +5365,10 @@ bool RenderSystem::ensureGBufferFramebuffer(unsigned int width, unsigned int hei
 
     // MRT: color[0] = packed depth (point-sampled like the depth pre-pass),
     //      color[1] = view-space normal (oct .rg) + roughness (.b) + metallic (.a),
-    //      color[2] = linear base color (.rgb) + hasIBL flag (.a)
-    ColorFormat formats[3] = { ColorFormat::RGBA, ColorFormat::RGBA, ColorFormat::RGBA };
-    gbufferFramebuffer.setColorAttachments(3, formats);
+    //      color[2] = linear base color (.rgb) + IBL source code (.a),
+    //      color[3] = material occlusion (.r)
+    ColorFormat formats[4] = { ColorFormat::RGBA, ColorFormat::RGBA, ColorFormat::RGBA, ColorFormat::RED };
+    gbufferFramebuffer.setColorAttachments(4, formats);
     gbufferFramebuffer.setWidth(width);
     gbufferFramebuffer.setHeight(height);
     gbufferFramebuffer.setMinFilter(TextureFilter::NEAREST);
@@ -5357,7 +5380,7 @@ bool RenderSystem::ensureGBufferFramebuffer(unsigned int width, unsigned int hei
     return gbufferFramebuffer.isCreated();
 }
 
-bool RenderSystem::drawMeshGBuffer(Entity entity, MeshComponent& mesh, Transform& transform, const float cameraFar, const Plane frustumPlanes[6], vs_gbuffer_t vsGBufferParams, bool hasLocalProbe, InstancedMeshComponent* instmesh, TerrainComponent* terrain, TilemapComponent* tilemap, int instanceView, const LodView* lodView){
+bool RenderSystem::drawMeshGBuffer(Entity entity, MeshComponent& mesh, Transform& transform, const float cameraFar, const Plane frustumPlanes[6], vs_gbuffer_t vsGBufferParams, int iblCode, InstancedMeshComponent* instmesh, TerrainComponent* terrain, TilemapComponent* tilemap, int instanceView, const LodView* lodView){
     if (!mesh.loaded || mesh.needReload)
         return true;
 
@@ -5416,10 +5439,8 @@ bool RenderSystem::drawMeshGBuffer(Entity entity, MeshComponent& mesh, Transform
         gbufferRender.applyUniformBlock(mesh.submeshes[i].slotVSGBufferParams, sizeof(vs_gbuffer_t), &vsGBufferParams);
 
         fs_gbuffer_material_t mat;
-        // IBL source encoding: 0 = none, 0.5 = sky, 1 = local probe. The SSR
-        // composite can exactly replace sky IBL; local probes need a deferred
-        // cubemap array to be reconstructed per pixel, so they use additive SSR.
-        float iblSource = mesh.submeshes[i].hasIBL ? (hasLocalProbe ? 1.0f : 0.5f) : 0.0f;
+        // IBL source code of the object (renderGBufferPass), 0 for submeshes without IBL
+        float iblSource = mesh.submeshes[i].hasIBL ? (float)iblCode / 255.0f : 0.0f;
         const Material& material = mesh.submeshes[i].material;
         const float alphaCutoff = usesAlphaMask(material, mesh.submeshes[i].textureShadow)
             ? material.alphaCutoff
@@ -5473,6 +5494,9 @@ void RenderSystem::renderGBufferPass(CameraComponent& camera){
     gbufferPassRender.setClearColor(Vector4(1.0, 1.0, 1.0, 1.0)); // color[0] background -> depth ~1.0
     gbufferPassRender.startRenderPass(&gbufferFramebuffer.getRender());
 
+    // composite probe slots, given in first-use order
+    ssrProbeCount = 0;
+
     auto transforms = scene->getComponentArray<Transform>();
     for (int i = 0; i < transforms->size(); i++){
         Transform& transform = transforms->getComponentFromIndex(i);
@@ -5490,18 +5514,40 @@ void RenderSystem::renderGBufferPass(CameraComponent& camera){
         TerrainComponent* terrain = scene->findComponent<TerrainComponent>(entity);
         TilemapComponent* tilemap = scene->findComponent<TilemapComponent>(entity);
 
+        // off-screen objects neither draw nor take a probe slot
+        if (cullsBatch(mesh, instmesh) && !isInsideCamera(camera.farClip, camera.frustumPlanes, mesh.worldAABB))
+            continue;
+
+        // the IBL source the composite reads back, coded as in composite.frag
         fs_reflection_probe_t probeParams;
         TextureRender* probeTexture = nullptr;
         Vector3 probeSamplePosition = meshProbeSamplePosition(mesh, transform);
-        bool hasLocalProbe = selectReflectionProbe(probeSamplePosition, probeParams, probeTexture)
-            && probeParams.position_weight.w > 0.001f;
+        int iblCode = 1;
+        if (selectReflectionProbe(probeSamplePosition, probeParams, probeTexture) && probeParams.position_weight.w > 0.001f){
+            int slot = 0;
+            while (slot < ssrProbeCount && ssrProbeTextures[slot] != probeTexture)
+                slot++;
+            if (slot == ssrProbeCount && ssrProbeCount < SSR_PROBE_SLOTS){
+                ssrProbeTextures[slot] = probeTexture;
+                fs_composite.probePosition[slot] = probeParams.position_weight;
+                fs_composite.probeBoxMin[slot] = probeParams.boxMin_intensity;
+                fs_composite.probeBoxMax[slot] = probeParams.boxMax_lod;
+                ssrProbeCount++;
+            }
+            if (slot < ssrProbeCount){
+                const int q = std::max((int)std::lround(std::min(probeParams.position_weight.w, 1.0f) * 63.0f), 1);
+                iblCode = 3 + slot * 63 + (q - 1);
+            }else{
+                iblCode = 2;
+            }
+        }
 
         // view-space normal matrix = transpose(inverse(view * model))
         Matrix4 viewModel = viewMatrix * transform.modelMatrix;
         Matrix4 normalMatrix = viewModel.inverse().transpose();
 
         vs_gbuffer_t params = {transform.modelMatrix, renderVP, normalMatrix};
-        drawMeshGBuffer(entity, mesh, transform, camera.farClip, camera.frustumPlanes, params, hasLocalProbe, instmesh, terrain, tilemap, 0, &mainLodView);
+        drawMeshGBuffer(entity, mesh, transform, camera.farClip, camera.frustumPlanes, params, iblCode, instmesh, terrain, tilemap, 0, &mainLodView);
     }
     gbufferPassRender.endRenderPass();
 }
@@ -5536,6 +5582,10 @@ void RenderSystem::loadSSR(){
     compositeRender.beginLoad(PrimitiveType::TRIANGLES);
     compositeRender.setShader(compositeShader.get());
     compositeSlotParams = compositeShader.get()->shaderData.getUniformBlockIndex(UniformBlockType::COMPOSITE_FS_PARAMS);
+    for (int s = 0; s < SSR_PROBE_SLOTS; s++){
+        compositeProbeSlots[s] = compositeShader.get()->shaderData.getTextureIndexByName("u_probeTexture" + std::to_string(s));
+    }
+    compositeOcclusionSlot = compositeShader.get()->shaderData.getTextureIndexByName("u_occlusionGBufferTexture");
     if (!compositeRender.endLoad(PIP_RTT | PIP_DEFAULT, false, true, CullingMode::BACK, WindingOrder::CCW))
         return;
 
@@ -5571,6 +5621,11 @@ void RenderSystem::destroySSR(){
     ssrSlotParams = -1;
     ssrBlurSlotParams = -1;
     compositeSlotParams = -1;
+    for (int s = 0; s < SSR_PROBE_SLOTS; s++){
+        compositeProbeSlots[s] = std::pair<int, int>(-1, -1);
+    }
+    compositeOcclusionSlot = std::pair<int, int>(-1, -1);
+    ssrProbeCount = 0;
     ssrLoaded = false;
 }
 
@@ -5689,9 +5744,9 @@ void RenderSystem::renderSSR(CameraComponent& camera, FramebufferRender* destina
     }
 
     // --- 3. composite pass: energy-conserving SSR-over-IBL -> real destination ---
-    // The composite recomputes the IBL specular term per pixel (for surfaces flagged
-    // hasIBL in the G-buffer) and replaces it with the SSR reflection, so the env
-    // reflection already in the scene is not double-counted.
+    // The composite recomputes the environment specular per pixel (the sky, or the
+    // local probe the G-buffer pass recorded for the object) and replaces it with the
+    // SSR reflection, so the reflection already in the scene is not double-counted.
     fs_composite.invProjection = renderProj.inverse();
     fs_composite.invView = camera.viewMatrix.inverse();
 
@@ -5699,6 +5754,7 @@ void RenderSystem::renderSSR(CameraComponent& camera, FramebufferRender* destina
     // so a swapchain destination samples them flipped (renderBlit does the same)
     float flipDest = (!destination && Engine::isOpenGL()) ? 1.0f : 0.0f;
     fs_composite.params = Vector4(scene->getSSRIntensity(), flipGL, (float)scene->getSSRDebugMode(), flipDest);
+    // fs_composite.probe* were filled by renderGBufferPass for slots below ssrProbeCount
 
     // environment color/rotation, matching mesh.frag's lighting.envColor; the prefiltered
     // GGX map comes from the sky (fall back to a black cube when there is no IBL sky)
@@ -5733,7 +5789,14 @@ void RenderSystem::renderSSR(CameraComponent& camera, FramebufferRender* destina
         compositeRender.addTexture(cd.getTextureIndex(TextureShaderType::DEPTHTEXTURE), ShaderStageType::FRAGMENT, &gbufferFramebuffer.getRender().getColorAttachmentTexture(0));
         compositeRender.addTexture(cd.getTextureIndex(TextureShaderType::GBUFFERTEXTURE), ShaderStageType::FRAGMENT, &gbufferFramebuffer.getRender().getColorAttachmentTexture(1));
         compositeRender.addTexture(cd.getTextureIndex(TextureShaderType::GBUFFERALBEDOTEXTURE), ShaderStageType::FRAGMENT, &gbufferFramebuffer.getRender().getColorAttachmentTexture(2));
+        compositeRender.addTexture(compositeOcclusionSlot, ShaderStageType::FRAGMENT, &gbufferFramebuffer.getRender().getColorAttachmentTexture(3));
         compositeRender.addTexture(cd.getTextureIndex(TextureShaderType::PREFILTEREDMAP), ShaderStageType::FRAGMENT, prefilteredTexture);
+        compositeRender.addTexture(cd.getTextureIndex(TextureShaderType::SSAOTEXTURE), ShaderStageType::FRAGMENT,
+                                   currentSSAOTexture ? currentSSAOTexture : &emptyWhite);
+        for (int s = 0; s < SSR_PROBE_SLOTS; s++){
+            compositeRender.addTexture(compositeProbeSlots[s], ShaderStageType::FRAGMENT,
+                                       s < ssrProbeCount ? ssrProbeTextures[s] : &emptyCubeBlack);
+        }
         compositeRender.applyUniformBlock(compositeSlotParams, sizeof(fs_composite_t), &fs_composite);
         compositeRender.draw(0, 3, 1);
     }
@@ -7101,6 +7164,232 @@ namespace {
             }
         }
     }
+
+    // A wake map keeps each world texel at its position modulo the size
+    struct WakeGrid{
+        float* values;
+        int size;
+        int originX;
+        int originZ;
+        float texel;
+    };
+
+    int wrapWakeTexel(int texel, int size){
+        return ((texel % size) + size) % size;
+    }
+
+    float smoothstep(float edge0, float edge1, float x){
+        const float t = std::clamp((x - edge0) / (edge1 - edge0), 0.0f, 1.0f);
+        return t * t * (3.0f - 2.0f * t);
+    }
+
+    // Capsule from a to b, its strength lerped along it, kept where larger. A crest falls
+    // off as a cosine, foam keeps a solid core
+    void stampWake(WakeGrid& grid, Vector2 a, Vector2 b, float radius, float strengthA, float strengthB, bool crest){
+        if (radius <= 0.0f || (strengthA <= 0.0f && strengthB <= 0.0f))
+            return;
+
+        const float inv = 1.0f / grid.texel;
+        const int minX = std::max((int)std::floor((std::min(a.x, b.x) - radius) * inv), grid.originX);
+        const int maxX = std::min((int)std::floor((std::max(a.x, b.x) + radius) * inv), grid.originX + grid.size - 1);
+        const int minZ = std::max((int)std::floor((std::min(a.y, b.y) - radius) * inv), grid.originZ);
+        const int maxZ = std::min((int)std::floor((std::max(a.y, b.y) + radius) * inv), grid.originZ + grid.size - 1);
+        const Vector2 ab = b - a;
+        const float lengthSquared = ab.squaredLength();
+        for (int z = minZ; z <= maxZ; z++){
+            float* row = grid.values + (size_t)wrapWakeTexel(z, grid.size) * grid.size;
+            for (int x = minX; x <= maxX; x++){
+                const Vector2 p(((float)x + 0.5f) * grid.texel, ((float)z + 0.5f) * grid.texel);
+                const float t = (lengthSquared > 0.0f) ? std::clamp((p - a).dotProduct(ab) / lengthSquared, 0.0f, 1.0f) : 0.0f;
+                const float d = (p - (a + ab * t)).length() / radius;
+                if (d >= 1.0f)
+                    continue;
+                const float shape = crest ? 0.5f + 0.5f * std::cos(0.5f * WATER_TWO_PI * d) : 1.0f - smoothstep(0.45f, 1.0f, d);
+                float& value = row[wrapWakeTexel(x, grid.size)];
+                value = std::max(value, (strengthA + (strengthB - strengthA) * t) * shape);
+            }
+        }
+    }
+
+    // at a length Froude number of 0.4
+    float getWakeHullSpeed(float length){
+        return 0.4f * std::sqrt(9.81f * std::max(length, 0.1f));
+    }
+
+    // Kelvin's half angle, narrowing as 1 / Froude past 0.5 (Rabaud and Moisy, 2013)
+    float getWakeAngle(float speed, float length){
+        const float froude = speed / std::sqrt(9.81f * std::max(length, 0.1f));
+        const float kelvin = 0.33984f; // asin(1 / 3)
+        return (froude > 0.5f) ? kelvin * 0.5f / froude : kelvin;
+    }
+
+    // waterline along the motion, an ellipse inside the bounds, which also take in the deck
+    void getWakeFootprint(const WaterExclusionComponent& exclusion, const Transform& transform, const Vector2& direction,
+            float& halfLength, float& halfWidth){
+        const Vector3 size = exclusion.aabb.getSize();
+        const Vector3 x = transform.worldRotation * Vector3(1.0f, 0.0f, 0.0f);
+        const Vector3 z = transform.worldRotation * Vector3(0.0f, 0.0f, 1.0f);
+        Vector2 axisX(x.x, x.z);
+        Vector2 axisZ(z.x, z.z);
+        axisX = (axisX.squaredLength() > 1.0e-6f) ? axisX.normalized() : Vector2(1.0f, 0.0f);
+        axisZ = (axisZ.squaredLength() > 1.0e-6f) ? axisZ.normalized() : Vector2(0.0f, 1.0f);
+        const float radiusX = 0.5f * size.x * std::abs(transform.worldScale.x);
+        const float radiusZ = 0.5f * size.z * std::abs(transform.worldScale.z);
+        auto support = [&](const Vector2& d){
+            const float a = d.dotProduct(axisX) * radiusX;
+            const float b = d.dotProduct(axisZ) * radiusZ;
+            return std::sqrt(a * a + b * b);
+        };
+        halfLength = 0.9f * support(direction);
+        halfWidth = 0.7f * support(Vector2(-direction.y, direction.x));
+    }
+
+    // Diverging waves from each place the bow passed, at the wake angle of its speed then, with
+    // a lower crest inside and the transverse waves between; on the water it crosses, foam
+    // churned behind the stern and along the hull
+    void stampWaterWake(WakeGrid& foam, WakeGrid& waves, WaterExclusionComponent& exclusion, const Transform& transform,
+            bool crossing, float fade, float step){
+        const float speed = exclusion.wakeVelocity.length();
+        const Vector2 direction = (speed > 0.001f) ? exclusion.wakeVelocity / speed : exclusion.wakeHistory.back().direction;
+        float halfLength;
+        float halfWidth;
+        getWakeFootprint(exclusion, transform, direction, halfLength, halfWidth);
+        const float hullSpeed = getWakeHullSpeed(2.0f * halfLength);
+        const float waveStrength = std::min(exclusion.wakeWaves, 2.0f);
+        const float foamStrength = std::min(exclusion.wakeFoam, 2.0f);
+        const float texel = waves.texel;
+
+        struct Crest{
+            float offset; // from the track
+            float strength;
+            float width;
+            float wavelength; // of the transverse waves
+            float phase; // of the transverse waves, 1 on a crest
+        };
+        auto getCrest = [&](const WaterWakeSample& sample){
+            const float age = exclusion.wakeTime - sample.time;
+            const float life = std::max(1.0f - age / fade, 0.0f);
+            Crest crest;
+            crest.offset = halfWidth + sample.speed * std::tan(getWakeAngle(sample.speed, 2.0f * halfLength)) * age;
+            crest.wavelength = std::max(WATER_TWO_PI * sample.speed * sample.speed / 9.81f, 2.0f * texel);
+            crest.phase = std::cos(WATER_TWO_PI * sample.speed * age / crest.wavelength);
+            // highest at the cusps, where the transverse waves meet it
+            const float cusp = std::max(crest.phase, 0.0f);
+            crest.strength = waveStrength * smoothstep(0.05f, 0.6f, sample.speed / hullSpeed) * life * std::sqrt(life) * (0.3f + 0.7f * cusp * cusp);
+            // half the diverging wavelength at the cusps
+            crest.width = std::clamp(2.1f * sample.speed * sample.speed / 9.81f, 2.0f * texel, std::max(halfLength, 2.0f * texel));
+            return crest;
+        };
+
+        for (size_t s = 1; s < exclusion.wakeHistory.size(); s++){
+            const WaterWakeSample& a = exclusion.wakeHistory[s - 1];
+            const WaterWakeSample& b = exclusion.wakeHistory[s];
+            if ((b.position - a.position).length() > std::max(3.0f, halfLength))
+                continue;
+
+            const Crest crestA = getCrest(a);
+            const Crest crestB = getCrest(b);
+            if (crestA.strength <= 0.0f && crestB.strength <= 0.0f)
+                continue;
+
+            const Vector2 acrossA(-a.direction.y, a.direction.x);
+            const Vector2 acrossB(-b.direction.y, b.direction.x);
+            const float width = 0.5f * (crestA.width + crestB.width);
+            const float innerA = crestA.offset - 1.6f * crestA.width;
+            const float innerB = crestB.offset - 1.6f * crestB.width;
+            for (float side : {-1.0f, 1.0f}){
+                stampWake(waves, a.position + acrossA * (side * crestA.offset), b.position + acrossB * (side * crestB.offset),
+                        width, crestA.strength, crestB.strength, true);
+                if (innerA > halfWidth && innerB > halfWidth){
+                    stampWake(waves, a.position + acrossA * (side * innerA), b.position + acrossB * (side * innerB),
+                            width, 0.5f * crestA.strength, 0.5f * crestB.strength, true);
+                }
+            }
+
+            if (crestB.phase > 0.0f){
+                const float strength = 0.45f * crestB.strength * crestB.phase * crestB.phase;
+                stampWake(waves, b.position - acrossB * crestB.offset, b.position + acrossB * crestB.offset,
+                        std::max(0.25f * crestB.wavelength, texel), strength, strength, true);
+            }
+
+            // the bow waves of a fast hull break as they form
+            if (exclusion.wakeTime - b.time < 0.6f){
+                const float breaking = foamStrength * 0.8f * smoothstep(0.8f, 1.4f, b.speed / hullSpeed);
+                for (float side : {-1.0f, 1.0f}){
+                    const Vector2 point = b.position + acrossB * (side * crestB.offset);
+                    stampWake(foam, point, point, 0.6f * crestB.width, breaking, breaking, false);
+                }
+            }
+        }
+
+        if (!crossing || speed <= 0.05f)
+            return;
+
+        const float ratio = speed / hullSpeed;
+        const Vector2 center(exclusion.wakeLastPosition.x, exclusion.wakeLastPosition.z);
+        const Vector2 across(-direction.y, direction.x);
+        const Vector2 stern = center - direction * halfLength;
+        const Vector2 from = (exclusion.wakeSternValid && (stern - exclusion.wakeLastStern).length() < 3.0f) ? exclusion.wakeLastStern : stern;
+        const float churn = foamStrength * 0.9f * smoothstep(0.05f, 0.5f, ratio);
+        stampWake(foam, from, stern, halfWidth * (0.6f + 0.4f * std::min(ratio, 1.0f)), churn, churn, false);
+        exclusion.wakeLastStern = stern;
+        exclusion.wakeSternValid = true;
+
+        // along the hull, from beam to beam past the bow
+        const float spray = foamStrength * smoothstep(0.3f, 1.0f, ratio);
+        const Vector2 moved = exclusion.wakeVelocity * step;
+        for (int i = -10; i <= 10; i++){
+            const float angle = Angle::degToRad(10.0f * (float)i);
+            const Vector2 edge = center + direction * (halfLength * std::cos(angle)) + across * (halfWidth * std::sin(angle));
+            const float strength = spray * (0.55f + 0.45f * std::cos(angle));
+            stampWake(foam, edge - moved, edge, std::max(1.2f * texel, 0.2f * halfWidth), strength, strength, false);
+        }
+    }
+
+    // the texels a moved map now covers still hold those it left
+    void moveWakeMap(WaterComponent& water, int originX, int originZ){
+        const int size = WATER_WAKE_MAP_SIZE;
+        const int shiftX = originX - water.wakeOrigin[0];
+        const int shiftZ = originZ - water.wakeOrigin[1];
+        if (std::abs(shiftX) >= size || std::abs(shiftZ) >= size){
+            std::fill(water.wakeFoam.begin(), water.wakeFoam.end(), 0.0f);
+            std::fill(water.wakeWaves.begin(), water.wakeWaves.end(), 0.0f);
+        }else{
+            const int fromX = (shiftX > 0) ? water.wakeOrigin[0] + size : originX;
+            const int toX = (shiftX > 0) ? originX + size : water.wakeOrigin[0];
+            for (int x = fromX; x < toX; x++){
+                for (size_t t = wrapWakeTexel(x, size); t < water.wakeFoam.size(); t += size){
+                    water.wakeFoam[t] = 0.0f;
+                    water.wakeWaves[t] = 0.0f;
+                }
+            }
+            const int fromZ = (shiftZ > 0) ? water.wakeOrigin[1] + size : originZ;
+            const int toZ = (shiftZ > 0) ? originZ + size : water.wakeOrigin[1];
+            for (int z = fromZ; z < toZ; z++){
+                const size_t row = (size_t)wrapWakeTexel(z, size) * size;
+                std::fill_n(water.wakeFoam.begin() + row, size, 0.0f);
+                std::fill_n(water.wakeWaves.begin() + row, size, 0.0f);
+            }
+        }
+        water.wakeOrigin[0] = originX;
+        water.wakeOrigin[1] = originZ;
+    }
+
+    void destroyWaterWake(WaterComponent& water){
+        water.wakeTexture.destroyTexture();
+        water.wakeFoam.clear();
+        water.wakeWaves.clear();
+        water.wakeTexels.clear();
+        water.wakeActive = false;
+    }
+
+    void resetWaterWake(WaterExclusionComponent& exclusion){
+        exclusion.wakeHistory.clear();
+        exclusion.wakeVelocity = Vector2(0.0f, 0.0f);
+        exclusion.wakeTracked = false;
+        exclusion.wakeSternValid = false;
+        exclusion.wakeWater = NULL_ENTITY;
+    }
 }
 
 // the surface offset over the world point (x, z), from the grid point the waves move onto it
@@ -7519,6 +7808,8 @@ bool RenderSystem::drawWater(Entity entity, WaterComponent& water, Transform& tr
 
     render.addTexture(shaderData.getTextureIndex(TextureShaderType::WATEREXCLUSION), ShaderStageType::FRAGMENT,
             (waterExclusionMapLayers > 0) ? &waterExclusionMaps : &emptyArrayWhite);
+    const bool wake = water.wakeActive && water.wakeTexture.isCreated();
+    render.addTexture(shaderData.getTextureIndex(TextureShaderType::WATERWAKE), ShaderStageType::FRAGMENT, wake ? &water.wakeTexture : &emptyBlack);
 
     WaterWave waves[WATER_WAVE_COUNT];
     getWaterWaves(water, waves);
@@ -7557,6 +7848,12 @@ bool RenderSystem::drawWater(Entity entity, WaterComponent& water, Transform& tr
     fsParams.caustics = Vector4(std::max(water.caustics, 0.0f), 1.0f / std::max(water.causticsScale, 0.01f), 0.0f, 0.0f);
     fsParams.waveScale = Vector4(std::max(water.waveLength, 0.01f), 0.0f, 0.0f, 0.0f);
     setWaterExclusionParams(water, camTransform.worldPosition, fsParams);
+    if (wake){
+        const float texel = water.wakeTexelSize;
+        fsParams.wakeArea = Vector4((float)water.wakeOrigin[0] * texel, (float)water.wakeOrigin[1] * texel, 1.0f / ((float)WATER_WAKE_MAP_SIZE * texel), 1.0f);
+        // a full wave is 0.4 high, its slope taken over two texels
+        fsParams.wakeParams = Vector4(0.4f / (2.0f * texel), 1.0f / (float)WATER_WAKE_MAP_SIZE, 0.0f, 0.0f);
+    }
 
     render.applyUniformBlock(water.slotVSParams, sizeof(vs_water_t), &vsParams);
     render.applyUniformBlock(water.slotFSParams, water.fsParamsSize, &fsParams);
@@ -7601,6 +7898,8 @@ void RenderSystem::destroyWater(Entity entity, WaterComponent& water){
             TexturePool::remove("water|normal|default");
         }
     }
+
+    destroyWaterWake(water);
 
     //Destroy render
     water.render.destroy();
@@ -7796,6 +8095,166 @@ void RenderSystem::setWaterExclusionParams(const WaterComponent& water, const Ve
             break;
     }
     params.exclusionCount = Vector4((float)count, 0.0f, 0.0f, 0.0f);
+}
+
+// Moving exclusions leave foam where it forms and waves spreading from where their bow
+// passed, both in a map of each water around the camera
+void RenderSystem::updateWaterWakes(double dt, const CameraComponent& camera, const Transform& cameraTransform){
+    const bool running = !waterPaused && dt > 0.0;
+    const float step = (float)dt;
+    auto waters = scene->getComponentArray<WaterComponent>();
+    auto exclusions = scene->getComponentArray<WaterExclusionComponent>();
+
+    for (int i = 0; i < exclusions->size(); i++){
+        WaterExclusionComponent& exclusion = exclusions->getComponentFromIndex(i);
+        Transform* transform = scene->findComponent<Transform>(exclusions->getEntity(i));
+        exclusion.wakeWater = NULL_ENTITY;
+        if ((exclusion.wakeFoam <= 0.0f && exclusion.wakeWaves <= 0.0f) || !transform || exclusion.aabb.isNull()){
+            resetWaterWake(exclusion);
+            continue;
+        }
+
+        const Vector3 center = transform->modelMatrix * exclusion.aabb.getCenter();
+        if (!running || !exclusion.wakeTracked){
+            exclusion.wakeLastPosition = center;
+            exclusion.wakeTracked = true;
+            continue;
+        }
+
+        const Vector2 move(center.x - exclusion.wakeLastPosition.x, center.z - exclusion.wakeLastPosition.z);
+        exclusion.wakeLastPosition = center;
+        // a teleport would draw a wake across the water
+        if (move.length() > std::max(5.0f, exclusion.wakeVelocity.length() * step * 4.0f + 1.0f)){
+            resetWaterWake(exclusion);
+            continue;
+        }
+        exclusion.wakeVelocity += (move / step - exclusion.wakeVelocity) * (1.0f - std::exp(-step / 0.15f));
+        exclusion.wakeTime += step;
+
+        // inside the area of a water, with its surface between the bottom and top of the volume
+        for (int w = 0; w < waters->size(); w++){
+            const WaterComponent& water = waters->getComponentFromIndex(w);
+            Transform* waterTransform = scene->findComponent<Transform>(waters->getEntity(w));
+            if (!water.loaded || !waterTransform || !waterTransform->visible)
+                continue;
+            const AABB& area = water.worldAABB;
+            if (center.x < area.getMinimum().x || center.x > area.getMaximum().x ||
+                    center.z < area.getMinimum().z || center.z > area.getMaximum().z)
+                continue;
+            const float surface = waterTransform->worldPosition.y + getWaterSurfaceOffset(water, center.x, center.z).y;
+            if (surface < exclusion.worldAABB.getMinimum().y || surface > exclusion.worldAABB.getMaximum().y)
+                continue;
+            exclusion.wakeWater = waters->getEntity(w);
+            break;
+        }
+
+        const float speed = exclusion.wakeVelocity.length();
+        if (exclusion.wakeWater != NULL_ENTITY && speed > 0.05f){
+            const Vector2 direction = exclusion.wakeVelocity / speed;
+            float halfLength;
+            float halfWidth;
+            getWakeFootprint(exclusion, *transform, direction, halfLength, halfWidth);
+            const Vector2 bow = Vector2(center.x, center.z) + direction * halfLength;
+            if (exclusion.wakeHistory.empty() || (bow - exclusion.wakeHistory.back().position).length() >= std::max(0.25f, halfLength * 0.1f)){
+                exclusion.wakeHistory.push_back({bow, direction, speed, exclusion.wakeTime});
+            }
+        }else{
+            exclusion.wakeSternValid = false;
+        }
+        while (exclusion.wakeHistory.size() > 256 || (!exclusion.wakeHistory.empty() && exclusion.wakeTime - exclusion.wakeHistory.front().time > 60.0f)){
+            exclusion.wakeHistory.pop_front();
+        }
+    }
+
+    for (int w = 0; w < waters->size(); w++){
+        WaterComponent& water = waters->getComponentFromIndex(w);
+        const Entity waterEntity = waters->getEntity(w);
+        bool crossed = false;
+        for (int i = 0; i < exclusions->size() && !crossed; i++){
+            crossed = exclusions->getComponentFromIndex(i).wakeWater == waterEntity;
+        }
+        if (!crossed && !water.wakeActive)
+            continue;
+        if (!water.loaded || !Engine::isViewLoaded()){
+            destroyWaterWake(water);
+            continue;
+        }
+
+        const int size = WATER_WAKE_MAP_SIZE;
+        const size_t count = (size_t)size * size;
+        const float texel = std::max(water.wakeArea, 1.0f) / (float)size;
+        bool upload = running;
+        if (water.wakeFoam.size() != count || water.wakeTexelSize != texel){
+            water.wakeFoam.assign(count, 0.0f);
+            water.wakeWaves.assign(count, 0.0f);
+            water.wakeTexels.assign(count * 4, 0);
+            water.wakeTexelSize = texel;
+            upload = true;
+        }
+        if (!water.wakeTexture.isCreated()){
+            if (!water.wakeTexture.createDynamicTexture("water|wake", size, size, ColorFormat::RGBA, TextureFilter::LINEAR, TextureWrap::REPEAT))
+                continue;
+            upload = true;
+        }
+
+        // around what the camera looks at, never far from the eye
+        const Vector3& eye = cameraTransform.worldPosition;
+        Vector2 focus(camera.worldTarget.x - eye.x, camera.worldTarget.z - eye.z);
+        const float reach = 0.35f * (float)size * texel;
+        if (focus.length() > reach){
+            focus = focus.normalized() * reach;
+        }
+        const int originX = (int)std::floor((eye.x + focus.x) / texel) - size / 2;
+        const int originZ = (int)std::floor((eye.z + focus.y) / texel) - size / 2;
+        if (originX != water.wakeOrigin[0] || originZ != water.wakeOrigin[1]){
+            moveWakeMap(water, originX, originZ);
+            upload = true;
+        }
+
+        if (!upload)
+            continue;
+
+        if (running){
+            const float fade = std::max(water.wakeFade, 0.1f);
+            // an eighth is left after the fade time, which shows as scattered foam
+            const float decay = std::exp(-2.0f * step / fade);
+            for (float& value : water.wakeFoam){
+                value = (value > 0.002f) ? value * decay : 0.0f;
+            }
+            std::fill(water.wakeWaves.begin(), water.wakeWaves.end(), 0.0f);
+
+            WakeGrid foam{water.wakeFoam.data(), size, originX, originZ, texel};
+            WakeGrid waves{water.wakeWaves.data(), size, originX, originZ, texel};
+            for (int i = 0; i < exclusions->size(); i++){
+                WaterExclusionComponent& exclusion = exclusions->getComponentFromIndex(i);
+                Transform* transform = scene->findComponent<Transform>(exclusions->getEntity(i));
+                // one that left the water still spreads the waves it made
+                if (transform && !exclusion.wakeHistory.empty() && (exclusion.wakeWater == waterEntity || exclusion.wakeWater == NULL_ENTITY)){
+                    stampWaterWake(foam, waves, exclusion, *transform, exclusion.wakeWater == waterEntity, fade, step);
+                }
+            }
+        }
+
+        float strongest = 0.0f;
+        for (size_t t = 0; t < count; t++){
+            strongest = std::max(strongest, std::max(water.wakeFoam[t], water.wakeWaves[t]));
+            water.wakeTexels[t * 4] = toUnorm8(water.wakeFoam[t]);
+            water.wakeTexels[t * 4 + 1] = toUnorm8(water.wakeWaves[t]);
+        }
+        water.wakeTexture.updateTexture(water.wakeTexels.data(), water.wakeTexels.size());
+        water.wakeActive = strongest > 0.004f || crossed;
+    }
+}
+
+void RenderSystem::clearWaterWakes(){
+    auto waters = scene->getComponentArray<WaterComponent>();
+    for (int i = 0; i < waters->size(); i++){
+        destroyWaterWake(waters->getComponentFromIndex(i));
+    }
+    auto exclusions = scene->getComponentArray<WaterExclusionComponent>();
+    for (int i = 0; i < exclusions->size(); i++){
+        resetWaterWake(exclusions->getComponentFromIndex(i));
+    }
 }
 
 // unloaded with the water in destroyWater
@@ -8658,8 +9117,9 @@ void RenderSystem::getLoadCount(size_t& loaded, size_t& total) const{
             if (tilemap && tilemap->numTiles == 0)
                 continue;
             // Nor does a mesh with no geometry and nothing to build it, until a script fills it
+            const ModelComponent* model = scene->findComponent<ModelComponent>(entity);
             const bool empty = mesh.buffer.getSize() == 0 && mesh.indices.getSize() == 0 && mesh.numExternalBuffers == 0;
-            if (empty && !tilemap && !scene->findComponent<ModelComponent>(entity) && !scene->findComponent<TerrainComponent>(entity) &&
+            if (empty && !tilemap && (!model || model->filename.empty()) && !scene->findComponent<TerrainComponent>(entity) &&
                     !scene->findComponent<SpriteComponent>(entity) && !scene->findComponent<MeshPolygonComponent>(entity))
                 continue;
         }
@@ -10220,6 +10680,8 @@ void RenderSystem::update(double dt){
             camera.needUpdate = false;
         }
     }
+
+    updateWaterWakes(dt, mainCamera, mainCameraTransform);
 
     processLights(numLights, mainCamera, mainCameraTransform);
     if (hasLights2D){
